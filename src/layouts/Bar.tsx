@@ -1,24 +1,24 @@
-import React, { memo } from 'react'
-import { Link } from 'react-router-dom'
+import { memo } from 'react'
+import { NavLink } from 'react-router-dom'
 
 function Bar() {
   return (
     <section className="bar">
       <ul>
         <li>
-          <Link to="/test">과제</Link>
+          <NavLink to="/test">과제</NavLink>
         </li>
         <li>
-          <Link to="/test">질문</Link>
+          <NavLink to="/test">질문</NavLink>
         </li>
         <li>
-          <Link to="/test">정보</Link>
+          <NavLink to="/test">정보</NavLink>
         </li>
         <li>
-          <Link to="/test">공지</Link>
+          <NavLink to="/test">공지</NavLink>
         </li>
         <li>
-          <Link to="/test">분석</Link>
+          <NavLink to="/test">분석</NavLink>
         </li>
       </ul>
     </section>
