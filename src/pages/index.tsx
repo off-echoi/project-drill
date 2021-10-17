@@ -2,6 +2,8 @@
 import Members from '@/pages/00_Members/Members'
 // 회원 정보
 import Info from '@/pages/01_Info/Info'
+// 과제
+import TaskList from '@/pages/02_Task/TaskList'
 
 interface IRoutes {
   title: string
@@ -21,6 +23,12 @@ const Routes: IRoutes[] = [
     title: '회원 정보',
     path: '/info',
     component: Info,
+    exact: true,
+  },
+  {
+    title: '과제',
+    path: '/TaskList',
+    component: TaskList,
     exact: true,
   },
 ]
