@@ -1,8 +1,5 @@
-const { override, addWebpackAlias } = require('customize-cra')
-const path = require('path')
+const { alias, configPaths } = require('react-app-rewire-alias')
 
-module.exports = override(
-  addWebpackAlias({
-    '@': path.resolve(__dirname, 'src'),
-  })
-)
+module.exports = function override(config) {
+  return alias(configPaths('./tsconfig.paths.json'))(config)
+}

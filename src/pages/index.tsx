@@ -1,9 +1,9 @@
 // 회원, 클래스 선택 화면
-import Members from '@/pages/00_Members/Members'
+import Members from './00_Members/Members'
 // 회원 정보
-import Info from '@/pages/01_Info/Info'
+import Info from './01_Info/Info'
 // 과제
-import TaskList from '@/pages/02_Task/TaskList'
+import TaskList from './02_Task/TaskList'
 
 interface IRoutes {
   title: string

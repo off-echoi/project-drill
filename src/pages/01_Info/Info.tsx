@@ -1,13 +1,13 @@
 import { memo } from 'react'
 
-import Avatar from '@/components/Avatar'
+import { Avatar } from '@components/index'
 
 function Info() {
   return (
     <section>
       설정버튼
       <div>
-        <Avatar alt="meme" src="./" name="김뫄뫄" date="2006. 10. 20" />
+        <Avatar alt="me1me" src="./" name="김뫄뫄" date="2006. 10. 20" />
       </div>
       <table>
         <tr>
