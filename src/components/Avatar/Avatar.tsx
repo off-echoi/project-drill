@@ -1,13 +1,13 @@
 import { memo } from 'react'
 
-type avatarType = {
+type AvatarType = {
   alt: string
   src: string
   name: string
   date?: string
 }
 
-function Avatar({ alt, src, name, date }: avatarType) {
+function Avatar({ alt, src, name, date }: AvatarType) {
   return (
     <div>
       <img src={src} alt={alt} />
