@@ -8,6 +8,7 @@
       "@constants/*": ["src/constants/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
+      "@reducers/*": ["src/reducers/*"],
       "@router/*": ["src/router/*"]
     }
   }

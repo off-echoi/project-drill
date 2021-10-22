@@ -4,6 +4,8 @@ import Members from './00_Members/Members'
 import Info from './01_Info/Info'
 // 과제
 import TaskList from './02_Task/TaskList'
+// 카운터 테스트
+import Counter from './CounterTest/Counter'
 
 interface IRoutes {
   title: string
@@ -29,6 +31,12 @@ const Routes: IRoutes[] = [
     title: '과제',
     path: '/TaskList',
     component: TaskList,
+    exact: true,
+  },
+  {
+    title: '카운터 테스트',
+    path: '/Counter',
+    component: Counter,
     exact: true,
   },
 ]
