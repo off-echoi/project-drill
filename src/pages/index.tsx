@@ -1,3 +1,5 @@
+// 공통
+import Common from './00_Common/Common'
 // 회원, 클래스 선택 화면
 import Members from './00_Members/Members'
 // 회원 정보
@@ -15,6 +17,12 @@ interface IRoutes {
 }
 
 const Routes: IRoutes[] = [
+  {
+    title: '공통',
+    path: '/common',
+    component: Common,
+    exact: true,
+  },
   {
     title: '관리 회원 선택',
     path: '/members',
