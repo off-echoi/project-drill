@@ -1,14 +1,17 @@
 import React from 'react'
 import Router from '@router/index'
+import Bar from '@layouts/Bar'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <header className="App-header">
         <h1>리액트 기본설정</h1>
       </header>
       <Router />
-    </div>
+      <Bar />
+    </BrowserRouter>
   )
 }
 

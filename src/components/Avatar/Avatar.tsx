@@ -1,20 +1,21 @@
-import { memo } from 'react'
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
+import { memo, ReactElement } from 'react'
 
 type AvatarType = {
-  alt: string
-  src: string
+  children?: ReactElement<HTMLImageElement>
   name: string
-  date?: string
+  date?: string // 클래스 날짜
 }
 
-function Avatar({ alt, src, name, date }: AvatarType) {
+function Avatar({ children, name, date }: AvatarType) {
   return (
-    <div>
-      <img src={src} alt={alt} />
+    <div css={style}>
+      {children}
       <span>{name}</span>
       {date && <span>{date}</span>}
     </div>
   )
 }
-
+const style = css({})
 export default memo(Avatar)
