@@ -37,13 +37,13 @@ const Routes: IRoutes[] = [
   },
   {
     title: '과제',
-    path: '/TaskList',
+    path: '/taskList',
     component: TaskList,
     exact: true,
   },
   {
     title: '카운터 테스트',
-    path: '/Counter',
+    path: '/counter',
     component: Counter,
     exact: true,
   },
