@@ -1,4 +1,3 @@
-import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '@reducers/index'
 import { increase, decrease, increaseBy } from '@reducers/counter'
