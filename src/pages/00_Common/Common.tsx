@@ -1,4 +1,4 @@
-import { Avatar, BoardList } from '@components/index'
+import { Avatar, BoardList, Typo } from '@components/index'
 import ProfileImage from '@assets/profile01.jpg'
 type ContentType = {
   title: string
@@ -33,6 +33,14 @@ function Common() {
       <Avatar name="회원1" date="월, 목 13:00">
         <img src={ProfileImage} alt="이미지" />
       </Avatar>
+
+      <Avatar name="회원1" date="월, 목 13:00" type="list">
+        <img src={ProfileImage} alt="이미지" />
+      </Avatar>
+      <hr />
+      <Typo type="title">제목 1</Typo>
+      <Typo type="subTitle">제목 2</Typo>
+      <Typo type="text">글자 문단</Typo>
       <hr />
       <h3>게시판</h3>
       <h4>기본 게시판</h4>
