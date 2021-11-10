@@ -1,13 +1,14 @@
+import { Avatar } from '@/components'
 import { memo } from 'react'
-
-import { Avatar } from '@components/index'
-
+import ProfileImg from '@assets/profile01.jpg'
 function Info() {
   return (
     <section>
       설정버튼
       <div>
-        <Avatar alt="me1me" src="./" name="김뫄뫄" date="2006. 10. 20" />
+        <Avatar name="김뫄뫄" date="2006. 10. 20">
+          <img src={ProfileImg} alt="프로필 이미지" />
+        </Avatar>
       </div>
       <table>
         <tr>
