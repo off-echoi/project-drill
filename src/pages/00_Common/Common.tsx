@@ -14,7 +14,14 @@ const contentList1: ContentType[] = [
     date: '2021-03-01',
     userName: '작서자 명',
     href: '#',
-    answerYN: false,
+    answerYN: true,
+  },
+  {
+    title: '게시판 제목2 게시판 제목2 게시판 제목2 게시판 제목2 게시판 제목2 게시판 제목2 게시판 제목2 게시판 제목2',
+    date: '2021-03-01',
+    userName: '작성자2 작성자2',
+    href: '#',
+    answerYN: true,
   },
 ]
 const contentList2: ContentType[] = [
