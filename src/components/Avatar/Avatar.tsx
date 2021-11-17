@@ -2,7 +2,6 @@
 import { css } from '@emotion/react'
 import COLORS from '@constants/colors'
 import { memo, ReactElement } from 'react'
-import { join } from 'path'
 
 type AvatarType = {
   children?: ReactElement<HTMLImageElement>
@@ -15,13 +14,14 @@ function Avatar({ children, name, date, type = 'photo' }: AvatarType) {
   return (
     <div css={() => style(type)}>
       <div className="img_wrap">{children}</div>
-      <div>
+      <div className="member_info">
         <span className="member_name">{name}</span>
         {date && <span className="member_schedule">{date}</span>}
       </div>
     </div>
   )
 }
+
 const style = (type: 'list' | 'photo') => {
   let addStyle = ''
   if (type === 'list') {
@@ -34,9 +34,11 @@ const style = (type: 'list' | 'photo') => {
         height: 60rem;
         margin: 0;
       }
+      .member_info{
+        margin-left:10rem;
+      }
       .member_name {
         margin-top: 0;
-        margin-left:10rem;
       }
     `
   } else {
