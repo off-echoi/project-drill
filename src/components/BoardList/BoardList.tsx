@@ -12,12 +12,13 @@ type ContentType = {
   answerYN?: boolean // 질문, 답변 게시판용
 }
 type BoardListType = {
+  addClassName?: string
   content: ContentType[]
 }
 
-function BoardList({ content }: BoardListType) {
+function BoardList({ addClassName, content }: BoardListType) {
   return (
-    <ul css={style}>
+    <ul css={style} className={addClassName}>
       {content.length ? (
         content.map(({ title, date, userName, href, answerYN }: ContentType) => {
           return (
@@ -42,6 +43,7 @@ function BoardList({ content }: BoardListType) {
   )
 }
 const style = css`
+  margin-bottom: 10rem;
   border-top: 2rem solid ${COLORS.SecondGray};
   border-bottom: 2rem solid ${COLORS.SecondGray};
   font-size: 15rem;
