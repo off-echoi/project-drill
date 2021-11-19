@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import COLORS from '@constants/colors'
-import { memo, ReactElement } from 'react'
-import { Typo } from '@components/index'
+import { memo, ReactElement, useCallback } from 'react'
+import { Button, Typo } from '@components/index'
 import { ReactComponent as Menu } from '@assets/icon_menu.svg'
 
 type HeaderType = {
@@ -11,12 +11,15 @@ type HeaderType = {
 }
 
 function Header({ pageName, children }: HeaderType) {
+  const fnNav = useCallback(() => {
+    console.log('>>>>')
+  }, [])
   return (
     <header css={style}>
-      <button className="btn_menu">
+      <Button onClick={fnNav} type="icon" addClassName="btn_menu">
         <Menu />
         <span className="hidden">메뉴</span>
-      </button>
+      </Button>
       <Typo type="title" addClassName="pageTitle">
         {pageName}
       </Typo>
@@ -38,13 +41,7 @@ const style = css`
     top: 0;
     bottom: 0;
     z-index: 1;
-    width: 44rem;
     margin: auto;
-    svg {
-      width: 25rem;
-      height: 25rem;
-      fill: ${COLORS.PrimaryBlue};
-    }
   }
   .pageTitle {
     font-size: 18rem;
@@ -52,7 +49,7 @@ const style = css`
   }
   .right_btn_wrap {
     position: absolute;
-    right: 10rem;
+    right: 0;
     top: 0;
     bottom: 0;
     z-index: 1;
