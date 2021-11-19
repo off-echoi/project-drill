@@ -28,14 +28,34 @@ a:focus {
 button {
   border: none;
   cursor: pointer;
+  background: transparent;
+  padding: 0;
 }
 
 body > #root {
   min-width: 360px;
   min-height: 100vh;
-  padding: 20rem 20rem 50rem 20rem;
+  padding-bottom: 50rem;
 }
 .App-header h1 {
   font-size: 20rem;
   margin: 16rem;
+}
+/* 공통 css 클래스 */
+/* 헤더가 있는 섹션 클래스 */
+.header_section {
+  padding-top: 45rem;
+}
+/* 리더기 용text 히든 클래스 */
+.hidden {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
