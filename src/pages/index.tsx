@@ -10,6 +10,8 @@ import TaskList from './02_Task/TaskList'
 import QuestionList from './03_Question/QuestionList'
 // 공지사항
 import NoticeList from './04_Notice/NoticeList'
+// 회원 탈퇴
+import Withdraw from './08_Withdraw/Withdraw'
 // 카운터 테스트
 import Counter from './CounterTest/Counter'
 
@@ -55,6 +57,12 @@ const Routes: IRoutes[] = [
     title: '공지',
     path: '/notice',
     component: NoticeList,
+    exact: true,
+  },
+  {
+    title: '서비스 탈퇴',
+    path: '/withdraw',
+    component: Withdraw,
     exact: true,
   },
   {
