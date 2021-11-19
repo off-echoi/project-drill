@@ -1,8 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { BoardList, Typo } from '@components/index'
+import { BoardList, Button, Typo } from '@components/index'
 import { memo } from 'react'
 import Header from '@layouts/Header'
+import { ReactComponent as Write } from '@assets/icon_write.svg'
 
 type ContentType = {
   title: string
@@ -25,7 +26,10 @@ function NoticeList() {
   return (
     <>
       <Header pageName="공지사항">
-        <button>공지등록</button>
+        <Button type="icon" onClick={() => console.log('이동')} addClassName="btn_gray">
+          <Write />
+          <span className="hidden">공지 등록</span>
+        </Button>
       </Header>
       <section className="header_section" css={style}>
         <Typo type="pageNotice">수업 변동사항 등 공지를 알려주세요.</Typo>

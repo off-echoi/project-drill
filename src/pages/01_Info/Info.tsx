@@ -1,15 +1,19 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { Avatar, InfoTable } from '@components/index'
+import { Avatar, Button, InfoTable } from '@components/index'
 import { memo } from 'react'
 import Header from '@layouts/Header'
 import ProfileImg from '@assets/profile01.jpg'
+import { ReactComponent as Setting } from '@assets/icon_setting.svg'
 
 function Info() {
   return (
     <>
       <Header pageName="회원정보">
-        <button>셋팅</button>
+        <Button type="icon" onClick={() => console.log('이동')} addClassName="btn_gray">
+          <Setting />
+          <span className="hidden">회원 정보 수정</span>
+        </Button>
       </Header>
       <section className="header_section" css={style}>
         <div className="avartar_wrap">
