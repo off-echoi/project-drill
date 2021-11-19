@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import COLORS from '@constants/colors'
-import { memo } from 'react'
+import { Fragment, memo } from 'react'
 
 type TypoType = {
-  type: 'title' | 'subTitle' | 'text'
+  type: 'title' | 'subTitle' | 'text' | 'pageNotice'
   children: string
   addClassName?: string
 }
@@ -23,7 +23,29 @@ function Typo({ type, children, addClassName }: TypoType) {
       )}
       {type === 'text' && (
         <p css={textStyle} className={addClassName}>
-          {children}
+          {children &&
+            children.split('\\n').map((line, i) => {
+              return (
+                <Fragment key={i}>
+                  {line}
+                  <br />
+                </Fragment>
+              )
+            })}
+        </p>
+      )}
+
+      {type === 'pageNotice' && (
+        <p css={pageNoticeStyle} className={addClassName}>
+          {children &&
+            children.split('\\n').map((line, i) => {
+              return (
+                <Fragment key={i}>
+                  {line}
+                  <br />
+                </Fragment>
+              )
+            })}
         </p>
       )}
     </>
@@ -45,6 +67,14 @@ const textStyle = css`
   margin-top: 10rem;
   font-size: 16rem;
   text-align: center;
+  line-height: 1.4;
+  color: ${COLORS.SecondGray};
+`
+const pageNoticeStyle = css`
+  margin: 20rem 0;
+  font-size: 16rem;
+  text-align: center;
+  line-height: 1.4;
   color: ${COLORS.SecondGray};
 `
 export default memo(Typo)
