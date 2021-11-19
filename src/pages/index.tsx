@@ -6,6 +6,10 @@ import Members from './00_Members/Members'
 import Info from './01_Info/Info'
 // 과제
 import TaskList from './02_Task/TaskList'
+// 질문
+import QuestionList from './03_Question/QuestionList'
+// 공지사항
+import NoticeList from './04_Notice/NoticeList'
 // 카운터 테스트
 import Counter from './CounterTest/Counter'
 
@@ -37,8 +41,20 @@ const Routes: IRoutes[] = [
   },
   {
     title: '과제',
-    path: '/taskList',
+    path: '/task',
     component: TaskList,
+    exact: true,
+  },
+  {
+    title: '질문답',
+    path: '/qna',
+    component: QuestionList,
+    exact: true,
+  },
+  {
+    title: '공지',
+    path: '/notice',
+    component: NoticeList,
     exact: true,
   },
   {
