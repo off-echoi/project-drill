@@ -1,4 +1,4 @@
-import { Avatar, BoardList, Typo } from '@components/index'
+import { Avatar, BoardList, Typo, InfoTable } from '@components/index'
 import ProfileImage from '@assets/profile01.jpg'
 type ContentType = {
   title: string
@@ -54,6 +54,26 @@ function Common() {
       <BoardList content={contentList1} />
       <h4>질문답변 게시판</h4>
       <BoardList content={contentList2} />
+      <hr />
+      <h4>회원 정보 테이블</h4>
+      <InfoTable>
+        <tr>
+          <th>시간 </th>
+          <td>월, 수 17:00 ~ 19:00</td>
+        </tr>
+        <tr>
+          <th>과목 </th>
+          <td>영어</td>
+        </tr>
+        <tr>
+          <th>정보 </th>
+          <td>대와중학교 3학년</td>
+        </tr>
+        <tr>
+          <th>기타</th>
+          <td>기타 메모사항</td>
+        </tr>
+      </InfoTable>
     </div>
   )
 }
