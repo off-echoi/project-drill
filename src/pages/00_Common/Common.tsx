@@ -1,5 +1,6 @@
-import { Avatar, BoardList, Typo, InfoTable } from '@components/index'
+import { Avatar, BoardList, Typo, InfoTable, Button } from '@components/index'
 import ProfileImage from '@assets/profile01.jpg'
+import { ReactComponent as Menu } from '@assets/icon_menu.svg'
 type ContentType = {
   title: string
   date: string
@@ -44,6 +45,15 @@ function Common() {
       <Avatar name="회원1" date="월, 목 13:00" type="list">
         <img src={ProfileImage} alt="이미지" />
       </Avatar>
+      <hr />
+      <h3>버튼</h3>
+      <Button type="full" onClick={() => console.log('클릭')}>
+        기본 버튼
+      </Button>
+      <Button type="icon" onClick={() => console.log('클릭')}>
+        <Menu />
+        <span className="hidden">아이콘 버튼</span>
+      </Button>
       <hr />
       <Typo type="title">제목 1</Typo>
       <Typo type="subTitle">제목 2</Typo>

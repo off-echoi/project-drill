@@ -6,3 +6,5 @@ export { default as BoardList } from './BoardList/BoardList'
 export { default as InfoTable } from './InfoTable/InfoTable'
 // 텍스트
 export { default as Typo } from './Typo/Typo'
+// 버튼
+export { default as Button } from './Button/Button'
