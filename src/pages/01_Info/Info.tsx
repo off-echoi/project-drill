@@ -22,22 +22,24 @@ function Info() {
           </Avatar>
         </div>
         <InfoTable>
-          <tr>
-            <th>시간 </th>
-            <td>월, 수 17:00 ~ 19:00</td>
-          </tr>
-          <tr>
-            <th>과목 </th>
-            <td>영어</td>
-          </tr>
-          <tr>
-            <th>정보 </th>
-            <td>대와중학교 3학년</td>
-          </tr>
-          <tr>
-            <th>기타</th>
-            <td>기타 메모사항</td>
-          </tr>
+          <tbody>
+            <tr>
+              <th>시간 </th>
+              <td>월, 수 17:00 ~ 19:00</td>
+            </tr>
+            <tr>
+              <th>과목 </th>
+              <td>영어</td>
+            </tr>
+            <tr>
+              <th>정보 </th>
+              <td>대와중학교 3학년</td>
+            </tr>
+            <tr>
+              <th>기타</th>
+              <td>기타 메모사항</td>
+            </tr>
+          </tbody>
         </InfoTable>
       </section>
     </>
