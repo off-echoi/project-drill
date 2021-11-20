@@ -1,14 +1,7 @@
-import { useEffect } from 'react'
-import { Switch, Route, Redirect, useLocation } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import Routes from '@/pages'
 
-const Root = () => {
-  // const { pathname } = useLocation()
-
-  // useEffect(() => {
-  //   document.body.scrollTop = 0
-  // }, [pathname])
-
+function RouteIndex() {
   return (
     <Switch>
       {Routes.map(({ path, component, exact }, idx) => {
@@ -18,4 +11,4 @@ const Root = () => {
     </Switch>
   )
 }
-export default Root
+export default RouteIndex
