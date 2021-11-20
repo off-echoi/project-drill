@@ -17,7 +17,9 @@ import QuestionDetail from './03_Question/QuestionDetail'
 import NoticeList from './04_Notice/NoticeList'
 import NoticeWrite from './04_Notice/NoticeWrite'
 import NoticeDetail from './04_Notice/NoticeDetail'
-
+// 분석
+import Analysis from './05_Analysis/Analysis'
+import AnalysisWrite from './05_Analysis/AnalysisWrite'
 // 서비스 탈퇴
 import Withdraw from './08_Withdraw/Withdraw'
 // 카운터 테스트
@@ -101,6 +103,18 @@ const Routes: IRoutes[] = [
     title: '공지 상세 - 읽기',
     path: '/notice/detail',
     component: NoticeDetail,
+    exact: true,
+  },
+  {
+    title: '분석',
+    path: '/analysis',
+    component: Analysis,
+    exact: true,
+  },
+  {
+    title: '분석 작성',
+    path: '/analysis/write',
+    component: AnalysisWrite,
     exact: true,
   },
   {
