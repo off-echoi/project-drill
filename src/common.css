@@ -47,13 +47,18 @@ body > #root {
   height: 100%;
   position: absolute;
   top: 0;
-  background: rgba(0, 0, 0, 0.5);
   left: 0;
+  z-index: 30;
+  background: rgba(0, 0, 0, 0.5);
 }
 /* 공통 css 클래스 */
 /* 헤더가 있는 섹션 클래스 */
 .header_section {
   padding-top: 45rem;
+}
+.fixed_btn_section {
+  overflow: auto;
+  height: calc(100vh - 50rem);
 }
 /* 리더기 용text 히든 클래스 */
 .hidden {
