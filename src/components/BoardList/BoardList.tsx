@@ -20,9 +20,9 @@ function BoardList({ addClassName, content }: BoardListType) {
   return (
     <ul css={style} className={addClassName}>
       {content.length ? (
-        content.map(({ title, date, userName, href, answerYN }: ContentType) => {
+        content.map(({ title, date, userName, href, answerYN }: ContentType, idx) => {
           return (
-            <li className="board_list">
+            <li className="board_list" key={idx}>
               {answerYN && <span className="badge_answer">V</span>}
               <div className="board_left">
                 <Link to={href} className="board_title">
