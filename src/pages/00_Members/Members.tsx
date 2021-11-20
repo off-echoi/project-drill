@@ -20,28 +20,28 @@ function Members() {
         <li className="member_list">
           <Link to="/Info">
             <Avatar name="김회원">
-              <img src={ProfileImage1} alt="이미지" />
+              <img src={ProfileImage1} alt="김회원 회원" />
             </Avatar>
           </Link>
         </li>
         <li className="member_list">
           <Link to="/Info">
             <Avatar name="박원">
-              <img src={ProfileImage3} alt="이미지" />
+              <img src={ProfileImage3} alt="박원 회원" />
             </Avatar>
           </Link>
         </li>
         <li className="member_list">
           <Link to="/Info">
             <Avatar name="이아름">
-              <img src={ProfileImage4} alt="이미지" />
+              <img src={ProfileImage4} alt="이아름 회원" />
             </Avatar>
           </Link>
         </li>
         <li className="member_list">
           <Link to="/Info">
             <Avatar name="공진원">
-              <img src={ProfileImage5} alt="이미지" />
+              <img src={ProfileImage5} alt="공지원 회원" />
             </Avatar>
           </Link>
         </li>
