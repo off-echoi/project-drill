@@ -4,6 +4,8 @@ import COLORS from '@constants/colors'
 import { memo, ReactElement, useCallback } from 'react'
 import { useHistory } from 'react-router'
 import { Button, Typo } from '@components/index'
+import { useDispatch } from 'react-redux'
+import { popupControll } from '@/reducers/popup'
 import { ReactComponent as Menu } from '@assets/icon_menu.svg'
 import { ReactComponent as Back } from '@assets/icon_back.svg'
 
@@ -15,11 +17,11 @@ type HeaderType = {
 
 function Header({ type = 'menu', pageName, children }: HeaderType) {
   const history = useHistory()
+  const dispatch = useDispatch()
   // 사이드 네비 함수
   const fnNav = useCallback(() => {
-    //TODO:
-    console.log('>>>>')
-  }, [])
+    dispatch(popupControll({ type: 'NAV_STATE', payload: true }))
+  }, [dispatch])
 
   // 뒤로가기
   const fnGoBack = useCallback(() => {
