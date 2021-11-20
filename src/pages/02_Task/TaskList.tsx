@@ -1,7 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { BoardList, Button, Typo } from '@components/index'
-import { memo } from 'react'
+import { memo, useCallback } from 'react'
+import { useHistory } from 'react-router'
 import Header from '@layouts/Header'
 import { ReactComponent as Write } from '@assets/icon_write.svg'
 
@@ -18,26 +19,34 @@ const taskContent: ContentType[] = [
     title: '10월 4주차 과제입니다.',
     date: '2021-10-18',
     userName: '최선생',
-    href: '#',
+    href: '/task/detail',
   },
   {
     title: '10월 3주차 과제입니다.',
     date: '2021-10-09',
     userName: '최선생',
-    href: '#',
+    href: '/task/detail',
   },
   {
     title: '10월 2주차 과제입니다.',
     date: '2021-10-01',
     userName: '최선생',
-    href: '#',
+    href: '/task/detail',
   },
 ]
 function TaskList() {
+  const history = useHistory()
+
+  const goPage = useCallback(
+    (url: string) => {
+      history.push(url)
+    },
+    [history]
+  )
   return (
     <>
       <Header pageName="과제">
-        <Button type="icon" onClick={() => console.log('이동')} addClassName="btn_gray">
+        <Button type="icon" onClick={() => goPage('/task/write')} addClassName="btn_gray">
           <Write />
           <span className="hidden">과제 등록</span>
         </Button>
