@@ -10,7 +10,7 @@ function Nav() {
   return (
     <nav css={style}>
       <section className="info_section">
-        <Avatar name="가가" type="list">
+        <Avatar name="최선생" type="list">
           <img src={MyProfile} alt="내 사진" />
         </Avatar>
       </section>
@@ -26,17 +26,15 @@ function Nav() {
           </NavLink>
         </li>
         <li className="link_list">
-          <NavLink to="/" activeClassName="on">
+          <NavLink to="/memberDelete" activeClassName="on">
             회원삭제
           </NavLink>
         </li>
         <li className="link_list">
-          <NavLink to="/" activeClassName="on">
-            로그아웃
-          </NavLink>
+          <button onClick={() => alert('로그아웃 되었습니다.')}>로그아웃</button>
         </li>
         <li className="link_list">
-          <NavLink to="/" activeClassName="on">
+          <NavLink to="/withdraw" activeClassName="on">
             서비스 탈퇴
           </NavLink>
         </li>
@@ -62,7 +60,9 @@ const style = css`
   .link_list {
     font-size: 14rem;
     padding: 15rem 0;
-    a {
+    a,
+    button {
+      font-size: inherit;
       color: ${COLORS.DarkBlack};
       &.on {
         color: ${COLORS.PrimaryBlue};
