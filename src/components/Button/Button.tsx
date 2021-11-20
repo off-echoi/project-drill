@@ -4,7 +4,7 @@ import COLORS from '@constants/colors'
 import { memo } from 'react'
 
 type buttonType = {
-  type: 'full' | 'icon'
+  type: 'full' | 'icon' | 'fullFix'
   addClassName?: string
   disabled?: boolean
   children: JSX.Element | JSX.Element[] | string
@@ -16,6 +16,11 @@ function Button({ type, addClassName, disabled, onClick, children }: buttonType)
     <>
       {type === 'full' && (
         <button onClick={onClick} className={addClassName} disabled={disabled} css={fullStyle}>
+          {children}
+        </button>
+      )}
+      {type === 'fullFix' && (
+        <button onClick={onClick} className={addClassName} disabled={disabled} css={fullFixStyle}>
           {children}
         </button>
       )}
@@ -34,7 +39,21 @@ const fullStyle = css`
   background: ${COLORS.PrimaryBlue};
   font-size: 16rem;
   color: #fff;
-  &:disablde {
+  &:disabled {
+    background: ${COLORS.SecondGray};
+  }
+`
+const fullFixStyle = css`
+  position: fixed;
+  z-index: 20;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50rem;
+  background: ${COLORS.PrimaryBlue};
+  font-size: 16rem;
+  color: #fff;
+  &:disabled {
     background: ${COLORS.SecondGray};
   }
 `
