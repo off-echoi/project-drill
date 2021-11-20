@@ -1,7 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { BoardList, Button, Typo } from '@components/index'
-import { memo } from 'react'
+import { memo, useCallback } from 'react'
+import { useHistory } from 'react-router'
 import Header from '@layouts/Header'
 import { ReactComponent as Write } from '@assets/icon_write.svg'
 
@@ -18,15 +19,24 @@ const noticeContent: ContentType[] = [
     title: '10월 20일 수업은 11월 1일에 보강하겠습니다.',
     date: '2021-11-01',
     userName: '최선생',
-    href: '#',
+    href: '/notice/detail',
   },
 ]
 
 function NoticeList() {
+  const history = useHistory()
+
+  const goPage = useCallback(
+    (url: string) => {
+      history.push(url)
+    },
+    [history]
+  )
+
   return (
     <>
       <Header pageName="공지사항">
-        <Button type="icon" onClick={() => console.log('이동')} addClassName="btn_gray">
+        <Button type="icon" onClick={() => goPage('/notice/write')} addClassName="btn_gray">
           <Write />
           <span className="hidden">공지 등록</span>
         </Button>
