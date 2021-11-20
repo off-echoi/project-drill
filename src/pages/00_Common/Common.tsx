@@ -1,4 +1,4 @@
-import { Avatar, BoardList, Typo, InfoTable, Button } from '@components/index'
+import { Avatar, BoardList, Typo, InfoTable, Button, Input, BoardTable } from '@components/index'
 import ProfileImage from '@assets/profile01.jpg'
 import { ReactComponent as Menu } from '@assets/icon_menu.svg'
 type ContentType = {
@@ -55,6 +55,10 @@ function Common() {
         <span className="hidden">아이콘 버튼</span>
       </Button>
       <hr />
+      <h3>인풋</h3>
+      <Input labelText="제목" id="subject" type="text" name="subject" value="value" onChange={() => console.log('>')} />
+      <hr />
+      <h3>텍스트</h3>
       <Typo type="title">제목 1</Typo>
       <Typo type="subTitle">제목 2</Typo>
       <Typo type="text">글자 문단</Typo>
@@ -84,6 +88,13 @@ function Common() {
           <td>기타 메모사항</td>
         </tr>
       </InfoTable>
+      <h4>게시판 읽기 테이블</h4>
+      <BoardTable>
+        <tr>
+          <th>제목</th>
+          <td>제목입니다.</td>
+        </tr>
+      </BoardTable>
     </div>
   )
 }
