@@ -15,7 +15,7 @@ function Withdraw() {
     code: 'code001',
     etc: '',
   })
-  const setWithdrawFn = useCallback((e) => {
+  const _setWithdraw = useCallback((e) => {
     if (e.target.value === 'code001' || e.target.value === 'code002') {
       setWithdraw({
         code: e.target.value,
@@ -38,8 +38,8 @@ function Withdraw() {
 
   return (
     <>
-      <Header pageName="회원탈퇴"></Header>
-      <section className="header_section" css={style}>
+      <Header pageName="회원탈퇴" type="back" />
+      <section className="header_section fixed_btn_section" css={style}>
         <Typo type="pageNotice">탈퇴 이유를 선택해주세요.</Typo>
         <ul className="withdraw_wrap">
           <li className="withdraw_list">
@@ -49,7 +49,7 @@ function Withdraw() {
               name="code"
               value="code001"
               className="radio"
-              onChange={setWithdrawFn}
+              onChange={_setWithdraw}
               checked={withdraw.code === 'code001' ? true : false}
             />
             <label htmlFor="code001">서비스 이용이 불편해서</label>
@@ -61,7 +61,7 @@ function Withdraw() {
               name="code"
               value="code002"
               className="radio"
-              onChange={setWithdrawFn}
+              onChange={_setWithdraw}
               checked={withdraw.code === 'code002' ? true : false}
             />
             <label htmlFor="code002">다른 서비스를 이용하려고</label>
@@ -73,7 +73,7 @@ function Withdraw() {
               name="code"
               value="code003"
               className="radio"
-              onChange={setWithdrawFn}
+              onChange={_setWithdraw}
               checked={withdraw.code === 'code003' ? true : false}
             />
             <label htmlFor="code003">기타</label>
@@ -83,12 +83,12 @@ function Withdraw() {
               name="etc"
               id="code004"
               placeholder="내용을 입력해주세요."
-              onChange={setWithdrawFn}
+              onChange={_setWithdraw}
               disabled={withdraw.code !== 'code003' ? true : false}
               value={withdraw.etc}></textarea>
           </li>
         </ul>
-        <Button type="full" onClick={submitWithdraw} addClassName="btn_fixed">
+        <Button type="fullFix" onClick={submitWithdraw}>
           제출하기
         </Button>
       </section>
@@ -153,11 +153,6 @@ const style = css`
     &:disabled {
       opacity: 0.7;
     }
-  }
-  .btn_fixed {
-    position: fixed;
-    z-index: 20;
-    bottom: 0rem;
   }
 `
 export default memo(Withdraw)
