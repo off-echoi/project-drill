@@ -2,7 +2,8 @@
 import { css } from '@emotion/react'
 import COLORS from '@constants/colors'
 import { memo, useCallback } from 'react'
-import { Avatar, Button, Typo } from '@components/index'
+import { Avatar, Typo } from '@components/index'
+import Header from '@layouts/Header'
 import ProfileImage1 from '@assets/profile01.jpg'
 import ProfileImage3 from '@assets/profile03.jpg'
 import ProfileImage4 from '@assets/profile04.jpg'
@@ -18,50 +19,52 @@ function MemberDelete() {
     }
   }, [])
   return (
-    <div css={style}>
-      <Typo type="text" addClassName="text">
-        삭제할 회원을 고르세요.
-      </Typo>
-      <ul className="member_list_wrap">
-        <li className="member_list">
-          <Avatar name="김회원">
-            <img src={ProfileImage1} alt="이미지" />
-          </Avatar>
-          <button className="btn_delete" onClick={() => deleteMembers('김회원')}>
-            <span className="hidden">김회원 삭제</span>
-          </button>
-        </li>
-        <li className="member_list">
-          <Avatar name="박원">
-            <img src={ProfileImage3} alt="이미지" />
-          </Avatar>
-          <button className="btn_delete" onClick={() => deleteMembers('박원')}>
-            <span className="hidden">박원 삭제</span>
-          </button>
-        </li>
-        <li className="member_list">
-          <Avatar name="이아름">
-            <img src={ProfileImage4} alt="이미지" />
-          </Avatar>
-          <button className="btn_delete" onClick={() => deleteMembers('이아름')}>
-            <span className="hidden">이아름 삭제</span>
-          </button>
-        </li>
-        <li className="member_list">
-          <Avatar name="공진원">
-            <img src={ProfileImage5} alt="이미지" />
-          </Avatar>
-          <button className="btn_delete" onClick={() => deleteMembers('공진원')}>
-            <span className="hidden">공진원 삭제</span>
-          </button>
-        </li>
-      </ul>
-    </div>
+    <>
+      <Header pageName="회원삭제" type="back" />
+      <section css={style} className="header_section ">
+        <Typo type="text" addClassName="text">
+          삭제할 회원을 고르세요.
+        </Typo>
+        <ul className="member_list_wrap">
+          <li className="member_list">
+            <Avatar name="김회원">
+              <img src={ProfileImage1} alt="이미지" />
+            </Avatar>
+            <button className="btn_delete" onClick={() => deleteMembers('김회원')}>
+              <span className="hidden">김회원 삭제</span>
+            </button>
+          </li>
+          <li className="member_list">
+            <Avatar name="박원">
+              <img src={ProfileImage3} alt="이미지" />
+            </Avatar>
+            <button className="btn_delete" onClick={() => deleteMembers('박원')}>
+              <span className="hidden">박원 삭제</span>
+            </button>
+          </li>
+          <li className="member_list">
+            <Avatar name="이아름">
+              <img src={ProfileImage4} alt="이미지" />
+            </Avatar>
+            <button className="btn_delete" onClick={() => deleteMembers('이아름')}>
+              <span className="hidden">이아름 삭제</span>
+            </button>
+          </li>
+          <li className="member_list">
+            <Avatar name="공진원">
+              <img src={ProfileImage5} alt="이미지" />
+            </Avatar>
+            <button className="btn_delete" onClick={() => deleteMembers('공진원')}>
+              <span className="hidden">공진원 삭제</span>
+            </button>
+          </li>
+        </ul>
+      </section>
+    </>
   )
 }
 
 const style = css`
-  padding-top: 20rem;
   .text {
     margin-top: 20rem;
   }
