@@ -156,6 +156,7 @@ const style = css`
   }
   .btn_fixed {
     position: fixed;
+    z-index: 20;
     bottom: 0rem;
   }
 `
