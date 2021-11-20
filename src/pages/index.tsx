@@ -1,5 +1,6 @@
 // 공통
 import Common from './00_Common/Common'
+import MemberDelete from './00_Members/MemberDelete'
 // 회원, 클래스 선택 화면
 import Members from './00_Members/Members'
 // 회원 정보
@@ -33,6 +34,12 @@ const Routes: IRoutes[] = [
     title: '관리 회원 선택',
     path: '/members',
     component: Members,
+    exact: true,
+  },
+  {
+    title: '관리 회원 삭제',
+    path: '/memberDelete',
+    component: MemberDelete,
     exact: true,
   },
   {
