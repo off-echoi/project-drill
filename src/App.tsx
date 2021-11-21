@@ -1,14 +1,17 @@
 import { useEffect } from 'react'
 import RouteIndex from '@router/index'
-import Bar from '@layouts/Bar'
 import { useLocation } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { popupControll } from '@/reducers/popup'
+import Bar from '@layouts/Bar'
 import Nav from '@layouts/Nav'
 import ModalPortal from '@layouts/ModalPortal'
-import { useDispatch } from 'react-redux'
-import { popupControll } from '@/reducers/popup'
+import Login from '@/popups/Login'
+import { RootState } from './reducers'
 
 function App() {
   const { pathname } = useLocation()
+  const { POPUP_LOGIN_STATE } = useSelector((state: RootState) => state.popup)
   const dispatch = useDispatch()
   useEffect(() => {
     // 페이지 전환 시 항상 스크롤 값 0
@@ -20,10 +23,10 @@ function App() {
   return (
     <>
       <RouteIndex />
-      <>{pathname === '/members' ? <></> : <Bar />}</>
+      <>{pathname === '/members' || pathname === '/' ? <></> : <Bar />}</>
       <Nav />
       {/* 팝업영역 */}
-      <ModalPortal></ModalPortal>
+      <ModalPortal>{POPUP_LOGIN_STATE ? <Login /> : null}</ModalPortal>
     </>
   )
 }
