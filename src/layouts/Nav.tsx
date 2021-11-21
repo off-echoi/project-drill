@@ -62,12 +62,14 @@ function Nav() {
 }
 
 const style = css`
+  overflow-y: auto;
   position: fixed;
   left: -350rem;
   top: 0;
   z-index: 30;
   width: 250rem;
   height: 100vh;
+  min-height: 100rem;
   padding: 0 20rem;
   background: white;
   box-shadow: 0px 0 20px rgba(0, 0, 0, 0.3);
@@ -77,11 +79,11 @@ const style = css`
   }
   .btn_close {
     position: absolute;
-    right: -40rem;
-    top: 0rem;
+    right: 0;
+    top: 0;
     z-index: 30;
     svg {
-      fill: #fff;
+      fill: ${COLORS.PrimaryBlue};
     }
   }
   .info_section {
