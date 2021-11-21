@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/project-drill/static/css/main.721322f8.chunk.css",
+    "main.js": "/project-drill/static/js/main.b84038a9.chunk.js",
+    "main.js.map": "/project-drill/static/js/main.b84038a9.chunk.js.map",
+    "runtime-main.js": "/project-drill/static/js/runtime-main.af0d50f9.js",
+    "runtime-main.js.map": "/project-drill/static/js/runtime-main.af0d50f9.js.map",
+    "static/js/2.48f56552.chunk.js": "/project-drill/static/js/2.48f56552.chunk.js",
+    "static/js/2.48f56552.chunk.js.map": "/project-drill/static/js/2.48f56552.chunk.js.map",
+    "static/js/3.bc5df905.chunk.js": "/project-drill/static/js/3.bc5df905.chunk.js",
+    "static/js/3.bc5df905.chunk.js.map": "/project-drill/static/js/3.bc5df905.chunk.js.map",
+    "index.html": "/project-drill/index.html",
+    "static/css/main.721322f8.chunk.css.map": "/project-drill/static/css/main.721322f8.chunk.css.map",
+    "static/js/2.48f56552.chunk.js.LICENSE.txt": "/project-drill/static/js/2.48f56552.chunk.js.LICENSE.txt",
+    "static/media/icon_add.f4290ebf.svg": "/project-drill/static/media/icon_add.f4290ebf.svg",
+    "static/media/icon_analysis.1e7f9153.svg": "/project-drill/static/media/icon_analysis.1e7f9153.svg",
+    "static/media/icon_app.14373ab7.svg": "/project-drill/static/media/icon_app.14373ab7.svg",
+    "static/media/icon_back.0690e70f.svg": "/project-drill/static/media/icon_back.0690e70f.svg",
+    "static/media/icon_close.10708bda.svg": "/project-drill/static/media/icon_close.10708bda.svg",
+    "static/media/icon_delete.beef48b8.svg": "/project-drill/static/media/icon_delete.beef48b8.svg",
+    "static/media/icon_info.55782989.svg": "/project-drill/static/media/icon_info.55782989.svg",
+    "static/media/icon_menu.271169ce.svg": "/project-drill/static/media/icon_menu.271169ce.svg",
+    "static/media/icon_notice.111be089.svg": "/project-drill/static/media/icon_notice.111be089.svg",
+    "static/media/icon_qna.f2ebf950.svg": "/project-drill/static/media/icon_qna.f2ebf950.svg",
+    "static/media/icon_setting.af6aa349.svg": "/project-drill/static/media/icon_setting.af6aa349.svg",
+    "static/media/icon_task.406552f2.svg": "/project-drill/static/media/icon_task.406552f2.svg",
+    "static/media/icon_write.98d70416.svg": "/project-drill/static/media/icon_write.98d70416.svg",
+    "static/media/profile01.bb573bb0.jpg": "/project-drill/static/media/profile01.bb573bb0.jpg",
+    "static/media/profile02.a859ee9e.jpg": "/project-drill/static/media/profile02.a859ee9e.jpg",
+    "static/media/profile03.559a379e.jpg": "/project-drill/static/media/profile03.559a379e.jpg",
+    "static/media/profile04.b04763ba.jpg": "/project-drill/static/media/profile04.b04763ba.jpg",
+    "static/media/profile05.a86d91f5.jpg": "/project-drill/static/media/profile05.a86d91f5.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.af0d50f9.js",
+    "static/js/2.48f56552.chunk.js",
+    "static/css/main.721322f8.chunk.css",
+    "static/js/main.b84038a9.chunk.js"
+  ]
+}
