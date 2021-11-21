@@ -4,7 +4,7 @@ import { ChangeEventHandler, InputHTMLAttributes, memo } from 'react'
 
 interface InputType extends InputHTMLAttributes<HTMLInputElement> {
   labelText: string
-  type: 'text'
+  type: 'text' | 'password'
   name: string
   value: string
   id: string
