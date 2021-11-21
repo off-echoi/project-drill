@@ -1,5 +1,7 @@
 // 공통
 import Common from './00_Common/Common'
+// 메인화면
+import Main from './00_Main/Main'
 // 회원 선택 화면
 import Members from './00_Members/Members'
 // 회원 삭제
@@ -37,6 +39,12 @@ const Routes: IRoutes[] = [
     title: '공통',
     path: '/common',
     component: Common,
+    exact: true,
+  },
+  {
+    title: '메인',
+    path: '/',
+    component: Main,
     exact: true,
   },
   {
