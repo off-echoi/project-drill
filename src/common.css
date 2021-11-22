@@ -50,8 +50,10 @@
 }
 
 html {
+  /* 360px : 1px = 100vw : X  ...100vw = 360*X ...36/100 = x = 0.36vw  */
   font-size: calc(100vw / 360);
 }
+
 * {
   font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
   color: #333;
@@ -64,13 +66,15 @@ img {
 body {
   min-width: 360px;
 }
+
 a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
   border: 1px solid transparent;
 }
-a:focus {
+a:focus,
+button:focus {
   border: 1px dashed gray;
 }
 button {
@@ -80,23 +84,20 @@ button {
   padding: 0;
 }
 
-body > #root {
-  min-width: 360px;
-  min-height: 100vh;
+#root {
   padding-bottom: 50rem;
 }
-.App-header h1 {
-  font-size: 20rem;
-  margin: 16rem;
-}
+
 /* modal 관련 */
 #modal {
 }
+
 /* 공통 css 클래스 */
 /* 헤더가 있는 섹션 클래스 */
 .header_section {
   padding-top: 45rem;
 }
+/* 아래에 고정된 버튼이 있는 섹션 클래스 */
 .fixed_btn_section {
   overflow: auto;
   height: calc(100vh - 50rem);
