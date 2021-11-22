@@ -31,11 +31,11 @@ function Nav() {
           </Avatar>
         </section>
         <ul>
-          <li className="link_list">
+          {/* <li className="link_list">
             <NavLink to="/" activeClassName="on">
               내 정보 수정
             </NavLink>
-          </li>
+          </li> */}
           <li className="link_list">
             <NavLink to="/members" activeClassName="on">
               다른 회원 선택
