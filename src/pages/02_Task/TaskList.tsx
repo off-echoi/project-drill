@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { BoardList, Button, Typo } from '@components/index'
-import { memo, useCallback } from 'react'
+import { useCallback } from 'react'
 import { useHistory } from 'react-router'
 import Header from '@layouts/Header'
 import { ReactComponent as Write } from '@assets/icon_write.svg'
@@ -59,4 +59,4 @@ function TaskList() {
   )
 }
 const style = css``
-export default memo(TaskList)
+export default TaskList

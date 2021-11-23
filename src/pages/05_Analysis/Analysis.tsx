@@ -2,7 +2,7 @@
 import { css } from '@emotion/react'
 import { Button, Typo } from '@components/index'
 import LineChart from './LineChart'
-import { memo, useCallback } from 'react'
+import { useCallback } from 'react'
 import { useHistory } from 'react-router'
 import Header from '@layouts/Header'
 import { ReactComponent as Write } from '@assets/icon_write.svg'
@@ -76,4 +76,4 @@ const style = css`
     font-size: 14rem;
   }
 `
-export default memo(Analysis)
+export default Analysis

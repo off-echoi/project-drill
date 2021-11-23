@@ -1,5 +1,4 @@
 import COLORS from '@constants/colors'
-import { memo } from 'react'
 import { Line } from 'react-chartjs-2'
 
 const data = {
@@ -37,4 +36,4 @@ function LineChart() {
   )
 }
 
-export default memo(LineChart)
+export default LineChart

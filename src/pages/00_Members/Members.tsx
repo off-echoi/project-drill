@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import { Avatar, Typo } from '@components/index'
 import ProfileImage1 from '@assets/profile01.jpg'
@@ -78,4 +77,4 @@ const style = css`
   }
 `
 
-export default memo(Members)
+export default Members

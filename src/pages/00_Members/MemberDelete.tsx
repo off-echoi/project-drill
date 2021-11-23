@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import COLORS from '@constants/colors'
-import { memo, useCallback } from 'react'
+import { useCallback } from 'react'
 import { Avatar, Typo } from '@components/index'
 import Header from '@layouts/Header'
 import ProfileImage1 from '@assets/profile01.jpg'
@@ -104,4 +104,4 @@ const style = css`
   }
 `
 
-export default memo(MemberDelete)
+export default MemberDelete

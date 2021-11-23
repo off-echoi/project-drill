@@ -2,7 +2,7 @@
 import { css } from '@emotion/react'
 import COLORS from '@/constants/colors'
 import { Button, Input } from '@components/index'
-import { memo, useCallback } from 'react'
+import { useCallback } from 'react'
 import Header from '@layouts/Header'
 import { ReactComponent as Plus } from '@assets/icon_add.svg'
 import { ReactComponent as Update } from '@assets/icon_write.svg'
@@ -134,4 +134,4 @@ const style = css`
     }
   }
 `
-export default memo(AnalysisWrite)
+export default AnalysisWrite

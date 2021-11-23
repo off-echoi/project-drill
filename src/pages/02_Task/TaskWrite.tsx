@@ -2,7 +2,7 @@
 import { css } from '@emotion/react'
 import COLORS from '@/constants/colors'
 import { Button, Input } from '@components/index'
-import { memo, useCallback, useState } from 'react'
+import { useCallback, useState } from 'react'
 import Header from '@layouts/Header'
 
 type TaskType = {
@@ -67,4 +67,4 @@ const style = css`
     height: calc(100vh - 250rem);
   }
 `
-export default memo(TaskWrite)
+export default TaskWrite

@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { BoardList, Typo } from '@components/index'
-import { memo } from 'react'
 import Header from '@layouts/Header'
 
 type ContentType = {
@@ -28,7 +27,7 @@ const qnaContent: ContentType[] = [
     answerYN: true,
   },
   {
-    title: 'The population is/are increasing 주어가 3인칭 단수라서 단수동사인 is를 쓰잖아요',
+    title: '문제를 풀다가 "My brother is sitting watching TV."라는 문장을 봤습니다.',
     date: '2021-10-28',
     userName: '김회원',
     href: '/qna/detail',
@@ -48,4 +47,4 @@ function QuestionList() {
   )
 }
 const style = css``
-export default memo(QuestionList)
+export default QuestionList

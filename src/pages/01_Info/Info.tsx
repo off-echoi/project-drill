@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { Avatar, Button, InfoTable } from '@components/index'
-import { memo } from 'react'
 import Header from '@layouts/Header'
 import ProfileImg from '@assets/profile01.jpg'
 import { ReactComponent as Setting } from '@assets/icon_setting.svg'
@@ -50,4 +49,4 @@ const style = css`
     margin: 40rem 0 20rem;
   }
 `
-export default memo(Info)
+export default Info

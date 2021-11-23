@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import COLORS from '@constants/colors'
-import { memo, useCallback, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { Button, Typo } from '@components/index'
 import Header from '@layouts/Header'
 
@@ -155,4 +155,4 @@ const style = css`
     }
   }
 `
-export default memo(Withdraw)
+export default Withdraw

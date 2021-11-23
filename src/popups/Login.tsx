@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import COLORS from '@constants/colors'
-import { memo, useCallback, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { useHistory } from 'react-router'
 import { useDispatch } from 'react-redux'
 import { popupControll } from '@reducers/popup'
@@ -121,4 +121,4 @@ const style = css`
     background: ${COLORS.PrimaryBlue};
   }
 `
-export default memo(Login)
+export default Login

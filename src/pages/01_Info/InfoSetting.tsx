@@ -1,5 +1,3 @@
-import { memo } from 'react'
-
 function InfoSetting() {
   return (
     <section>
@@ -36,4 +34,4 @@ function InfoSetting() {
   )
 }
 
-export default memo(InfoSetting)
+export default InfoSetting

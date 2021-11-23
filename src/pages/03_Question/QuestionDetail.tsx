@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { BoardTable, Button } from '@components/index'
-import { Fragment, memo, useCallback, useState } from 'react'
+import { Fragment, useCallback, useState } from 'react'
 import Header from '@layouts/Header'
 
 function QuestionDetail() {
@@ -94,4 +94,4 @@ const style = css`
     }
   }
 `
-export default memo(QuestionDetail)
+export default QuestionDetail
