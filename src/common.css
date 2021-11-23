@@ -50,8 +50,13 @@
 }
 
 html {
-  /* 360px : 1px = 100vw : X  ...100vw = 360*X ...36/100 = x = 0.36vw  */
-  font-size: calc(100vw / 360);
+  font-size: 1px;
+}
+@media screen and (max-width: 720px) {
+  html {
+    /* 360px : 1px = 100vw : X  ...100vw = 360*X ...36/100 = x = 0.36vw  */
+    font-size: calc(100vw / 360);
+  }
 }
 
 * {
