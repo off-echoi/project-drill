@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/project-drill/static/css/main.8b17bcce.chunk.css",
+    "main.css": "/project-drill/static/css/main.39921436.chunk.css",
     "main.js": "/project-drill/static/js/main.d21683fa.chunk.js",
     "main.js.map": "/project-drill/static/js/main.d21683fa.chunk.js.map",
     "runtime-main.js": "/project-drill/static/js/runtime-main.af0d50f9.js",
@@ -10,7 +10,7 @@
     "static/js/3.bc5df905.chunk.js": "/project-drill/static/js/3.bc5df905.chunk.js",
     "static/js/3.bc5df905.chunk.js.map": "/project-drill/static/js/3.bc5df905.chunk.js.map",
     "index.html": "/project-drill/index.html",
-    "static/css/main.8b17bcce.chunk.css.map": "/project-drill/static/css/main.8b17bcce.chunk.css.map",
+    "static/css/main.39921436.chunk.css.map": "/project-drill/static/css/main.39921436.chunk.css.map",
     "static/js/2.48f56552.chunk.js.LICENSE.txt": "/project-drill/static/js/2.48f56552.chunk.js.LICENSE.txt",
     "static/media/common.css": "/project-drill/static/media/NotoSansKR-Regular.8918c641.otf",
     "static/media/icon_add.f4290ebf.svg": "/project-drill/static/media/icon_add.f4290ebf.svg",
@@ -35,7 +35,7 @@
   "entrypoints": [
     "static/js/runtime-main.af0d50f9.js",
     "static/js/2.48f56552.chunk.js",
-    "static/css/main.8b17bcce.chunk.css",
+    "static/css/main.39921436.chunk.css",
     "static/js/main.d21683fa.chunk.js"
   ]
 }
