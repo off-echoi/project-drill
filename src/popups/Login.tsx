@@ -5,6 +5,7 @@ import { useCallback, useState } from 'react'
 import { useHistory } from 'react-router'
 import { useDispatch } from 'react-redux'
 import { popupControll } from '@reducers/popup'
+import { goPage } from '@/modules'
 import { Input } from '@components/index'
 import ModalWrap from '@layouts/ModalWrap'
 import { ReactComponent as App } from '@assets/icon_app.svg'
@@ -31,10 +32,10 @@ function Login() {
   }, [dispatch])
 
   // 메인으로 이동
-  const goPage = useCallback(
+  const goToPage = useCallback(
     (url: string) => {
       dispatch(popupControll({ type: 'POPUP_LOGIN_STATE', payload: false }))
-      history.push(url)
+      goPage(url, history)
     },
     [dispatch, history]
   )
@@ -66,7 +67,7 @@ function Login() {
           />
         </div>
         <div className="pos_bottom">
-          <button className="btn_login" onClick={() => goPage('/members')}>
+          <button className="btn_login" onClick={() => goToPage('/members')}>
             Login
           </button>
         </div>

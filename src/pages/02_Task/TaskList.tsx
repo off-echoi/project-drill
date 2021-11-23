@@ -3,8 +3,10 @@ import { css } from '@emotion/react'
 import { BoardList, Button, Typo } from '@components/index'
 import { useCallback } from 'react'
 import { useHistory } from 'react-router'
+import { goPage } from '@/modules'
 import Header from '@layouts/Header'
 import { ReactComponent as Write } from '@assets/icon_write.svg'
+// import { useGoPage } from '@/hook/useGoPage'
 
 type ContentType = {
   title: string
@@ -37,16 +39,16 @@ const taskContent: ContentType[] = [
 function TaskList() {
   const history = useHistory()
 
-  const goPage = useCallback(
-    (url: string) => {
-      history.push(url)
+  const goToPage = useCallback(
+    (url) => {
+      goPage(url, history)
     },
     [history]
   )
   return (
     <>
       <Header pageName="과제">
-        <Button type="icon" onClick={() => goPage('/task/write')} addClassName="btn_gray">
+        <Button type="icon" onClick={() => goToPage('/task/write')} addClassName="btn_gray">
           <Write />
           <span className="hidden">과제 등록</span>
         </Button>

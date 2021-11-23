@@ -4,15 +4,16 @@ import { Button, Typo } from '@components/index'
 import LineChart from './LineChart'
 import { useCallback } from 'react'
 import { useHistory } from 'react-router'
+import { goPage } from '@/modules'
 import Header from '@layouts/Header'
 import { ReactComponent as Write } from '@assets/icon_write.svg'
 
 function Analysis() {
   const history = useHistory()
 
-  const goPage = useCallback(
+  const goToPage = useCallback(
     (url: string) => {
-      history.push(url)
+      goPage(url, history)
     },
     [history]
   )
@@ -20,7 +21,7 @@ function Analysis() {
   return (
     <>
       <Header pageName="성과 분석">
-        <Button type="icon" onClick={() => goPage('/analysis/write')} addClassName="btn_gray">
+        <Button type="icon" onClick={() => goToPage('/analysis/write')} addClassName="btn_gray">
           <Write />
           <span className="hidden">성과 등록</span>
         </Button>

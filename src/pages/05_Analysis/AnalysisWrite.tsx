@@ -32,8 +32,8 @@ function AnalysisWrite() {
         </Button>
         <ul className="data_list_wrap">
           <li className="data_list rate_write">
-            <Input labelText="날짜" type="text" name="add_date" value="2021년 10월" id="add_date" addClassName="add_data_date" />
-            <Input labelText="성적" type="text" name="add_rate" value="100" id="add_rate" addClassName="add_data_rate" />
+            <Input labelText="날짜" type="text" name="add_date" value="2021년 10월" id="add_date" addClassName="add_data_date" readOnly />
+            <Input labelText="성적" type="text" name="add_rate" value="100" id="add_rate" addClassName="add_data_rate" readOnly />
           </li>
           <li className="data_list">
             <span className="data_date">2021년 9월</span>
@@ -132,6 +132,9 @@ const style = css`
       height: 15rem;
       fill: #aaa;
     }
+  }
+  input[readonly] {
+    border: 1rem solid #888;
   }
 `
 export default AnalysisWrite

@@ -3,6 +3,7 @@ import { css } from '@emotion/react'
 import { BoardList, Button, Typo } from '@components/index'
 import { useCallback } from 'react'
 import { useHistory } from 'react-router'
+import { goPage } from '@/modules'
 import Header from '@layouts/Header'
 import { ReactComponent as Write } from '@assets/icon_write.svg'
 
@@ -26,9 +27,9 @@ const noticeContent: ContentType[] = [
 function NoticeList() {
   const history = useHistory()
 
-  const goPage = useCallback(
-    (url: string) => {
-      history.push(url)
+  const goToPage = useCallback(
+    (url) => {
+      goPage(url, history)
     },
     [history]
   )
@@ -36,7 +37,7 @@ function NoticeList() {
   return (
     <>
       <Header pageName="공지사항">
-        <Button type="icon" onClick={() => goPage('/notice/write')} addClassName="btn_gray">
+        <Button type="icon" onClick={() => goToPage('/notice/write')} addClassName="btn_gray">
           <Write />
           <span className="hidden">공지 등록</span>
         </Button>
