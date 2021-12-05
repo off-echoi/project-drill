@@ -9,7 +9,8 @@
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
       "@reducers/*": ["src/reducers/*"],
-      "@router/*": ["src/router/*"]
+      "@router/*": ["src/router/*"],
+      "@hook/*": ["src/hook/*"]
     }
   }
 }
