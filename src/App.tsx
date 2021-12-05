@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import RouteIndex from '@router/index'
 import { useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,9 +7,12 @@ import Bar from '@layouts/Bar'
 import Nav from '@layouts/Nav'
 import ModalPortal from '@layouts/ModalPortal'
 import Login from '@/popups/Login'
-import { RootState } from './reducers'
+import { RootState } from '@/reducers'
+import { authService } from '@/fbase'
 
 function App() {
+  const [isLogged, setIsLogged] = useState<boolean>(authService.currentUser !== null ? true : false)
+
   const { pathname } = useLocation()
   const { POPUP_LOGIN_STATE } = useSelector((state: RootState) => state.popup)
   const dispatch = useDispatch()
@@ -22,7 +25,7 @@ function App() {
 
   return (
     <>
-      <RouteIndex />
+      <RouteIndex isLogged={isLogged} />
       <>{pathname === '/members' || pathname === '/' ? <></> : <Bar />}</>
       <Nav />
       {/* 팝업영역 */}

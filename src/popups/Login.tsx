@@ -6,7 +6,7 @@ import { useHistory } from 'react-router'
 import { useDispatch } from 'react-redux'
 import { popupControll } from '@reducers/popup'
 import { goPage } from '@/modules'
-import { Input } from '@components/index'
+import { Input, Typo } from '@components/index'
 import ModalWrap from '@layouts/ModalWrap'
 import { ReactComponent as App } from '@assets/icon_app.svg'
 
@@ -18,12 +18,15 @@ function Login() {
   const history = useHistory()
   const dispatch = useDispatch()
   const [loginInfo, setLoginInfo] = useState<LoginInfo>({ userId: '', password: '' })
-
+  const [validation, setValidation] = useState<boolean>(true) // true 면 유효성 통과
   //로그인 상태값 입력
   const _setLoginInfo = useCallback((e) => {
+    const {
+      target: { name, value },
+    } = e
     setLoginInfo((prev: LoginInfo) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }))
   }, [])
   // 팝업닫기
@@ -32,13 +35,19 @@ function Login() {
   }, [dispatch])
 
   // 메인으로 이동
-  const goToPage = useCallback(
+  const submitLogin = useCallback(
     (url: string) => {
-      dispatch(popupControll({ type: 'POPUP_LOGIN_STATE', payload: false }))
-      goPage(url, history)
+      if (loginInfo.userId !== '' && loginInfo.password !== '') {
+        setValidation(true)
+        dispatch(popupControll({ type: 'POPUP_LOGIN_STATE', payload: false }))
+        goPage(url, history)
+      } else {
+        setValidation(false)
+      }
     },
-    [dispatch, history]
+    [dispatch, history, loginInfo.password, loginInfo.userId]
   )
+
   return (
     <ModalWrap onClose={fnClose}>
       <section css={style}>
@@ -55,6 +64,7 @@ function Login() {
             value={loginInfo.userId}
             onChange={_setLoginInfo}
             addClassName="user_input"
+            required
           />
           <Input
             type="password"
@@ -64,10 +74,12 @@ function Login() {
             value={loginInfo.password}
             onChange={_setLoginInfo}
             addClassName="user_input"
+            required
           />
         </div>
+        {!validation ? <Typo type="text">이메일 및 비밀번호를 확인해주세요.</Typo> : <></>}
         <div className="pos_bottom">
-          <button className="btn_login" onClick={() => goToPage('/members')}>
+          <button className="btn_login" onClick={() => submitLogin('/members')}>
             Login
           </button>
         </div>
