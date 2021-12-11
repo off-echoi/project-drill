@@ -4,16 +4,23 @@ import COLORS from '@/constants/colors'
 import { Button, Input } from '@components/index'
 import { useCallback, useState } from 'react'
 import Header from '@layouts/Header'
+import moment from 'moment'
+import 'moment/locale/ko'
+import { dbService } from '@/fbase'
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 
 type NoticeType = {
   subject: string
   content: string
+  userName: string
+}
+const initialState: NoticeType = {
+  subject: '',
+  content: '',
+  userName: '최선생',
 }
 function NoticeWrite() {
-  const [notice, setNotice] = useState<NoticeType>({
-    subject: '',
-    content: '',
-  })
+  const [notice, setNotice] = useState<NoticeType>(initialState)
 
   const _setNotice = useCallback((e) => {
     setNotice(
@@ -23,9 +30,14 @@ function NoticeWrite() {
       })
     )
   }, [])
-  const submitNotice = useCallback(() => {
-    console.log(notice)
-    alert('작성완료!')
+  const submitNotice = useCallback(async () => {
+    await addDoc(collection(dbService, 'notice'), {
+      subject: notice.subject,
+      content: notice.content,
+      userName: notice.userName,
+      createdAt: serverTimestamp(),
+    })
+    setNotice(initialState)
   }, [notice])
 
   return (
@@ -34,7 +46,15 @@ function NoticeWrite() {
       <section className="header_section fixed_btn_section" css={style}>
         <div>
           <Input labelText="제목" id="subject" type="text" name="subject" value={notice.subject} onChange={_setNotice} addClassName="notice_input" />
-          <Input labelText="작성일" id="date" type="text" name="date" value="2021.11.03" addClassName="notice_input" readOnly />
+          <Input
+            labelText="작성일" //
+            id="date"
+            type="text"
+            name="date"
+            value={moment().format('YYYY.MM.DD')}
+            addClassName="notice_input"
+            readOnly
+          />
           <Input labelText="작성자" id="user" type="text" name="user" value="최선생" addClassName="notice_input" readOnly />
         </div>
         <article>

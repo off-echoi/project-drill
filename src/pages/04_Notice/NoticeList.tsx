@@ -1,31 +1,51 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { BoardList, Button, Typo } from '@components/index'
-import { useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
 import { goPage } from '@/modules'
+import { dbService } from '@/fbase'
+import { collection, getDocs, query } from 'firebase/firestore'
 import Header from '@layouts/Header'
 import { ReactComponent as Write } from '@assets/icon_write.svg'
+import moment from 'moment'
 
 type ContentType = {
-  title: string
-  date: string
+  subject: string
+  createdAt: string
+  id: string | number
+  path: string
   userName: string
-  href: string // TODO: 오브젝트 형태로바꾸끼
-  answerYN?: boolean // 질문, 답변 게시판용
 }
 
-const noticeContent: ContentType[] = [
-  {
-    title: '10월 20일 수업은 11월 1일에 보강하겠습니다.',
-    date: '2021-11-01',
-    userName: '최선생',
-    href: '/notice/detail',
-  },
-]
-
 function NoticeList() {
+  const [loading, setLoading] = useState<boolean>(true)
+  const [noticeList, setNoticeList] = useState<ContentType[]>([])
   const history = useHistory()
+
+  // 리스트 불러오기
+  const getNoticeList = useCallback(async () => {
+    const q = query(collection(dbService, 'notice'))
+    const querySnapshot = await getDocs(q)
+    let noticeList: ContentType[] = []
+    querySnapshot.forEach((doc) => {
+      const _notice: ContentType = {
+        // ...doc.data(),
+        id: doc.id,
+        subject: doc.data().subject,
+        userName: doc.data().userName,
+        path: '/notice/detail',
+        createdAt: moment(doc.data().createdAt.toDate()).format('YYYY.MM.DD'),
+      }
+      noticeList.push(_notice)
+    })
+    setNoticeList(noticeList.reverse())
+    setLoading(false)
+  }, [])
+
+  useEffect(() => {
+    getNoticeList()
+  }, [getNoticeList])
 
   const goToPage = useCallback(
     (url) => {
@@ -44,7 +64,7 @@ function NoticeList() {
       </Header>
       <section className="header_section" css={style}>
         <Typo type="pageNotice">수업 변동사항 등 공지를 알려주세요.</Typo>
-        <BoardList content={noticeContent} />
+        <BoardList content={noticeList} loading={loading} />
       </section>
     </>
   )
