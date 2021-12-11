@@ -9,31 +9,35 @@ import { ReactComponent as Write } from '@assets/icon_write.svg'
 // import { useGoPage } from '@/hook/useGoPage'
 
 type ContentType = {
-  title: string
-  date: string
+  subject: string
+  createdAt: string
+  id: string | number
+  path: string
   userName: string
-  href: string // TODO: 오브젝트 형태로바꾸끼
   answerYN?: boolean // 질문, 답변 게시판용
 }
 
 const taskContent: ContentType[] = [
   {
-    title: '10월 4주차 과제입니다.',
-    date: '2021-10-18',
+    subject: '10월 4주차 과제입니다.',
+    createdAt: '2021-10-18',
     userName: '최선생',
-    href: '/task/detail',
+    path: '/task/detail',
+    id: 1,
   },
   {
-    title: '10월 3주차 과제입니다.',
-    date: '2021-10-09',
+    subject: '10월 3주차 과제입니다.',
+    createdAt: '2021-10-09',
     userName: '최선생',
-    href: '/task/detail',
+    path: '/task/detail',
+    id: 2,
   },
   {
-    title: '10월 2주차 과제입니다.',
-    date: '2021-10-01',
+    subject: '10월 2주차 과제입니다.',
+    createdAt: '2021-10-01',
     userName: '최선생',
-    href: '/task/detail',
+    path: '/task/detail',
+    id: 3,
   },
 ]
 function TaskList() {

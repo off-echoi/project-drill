@@ -5,39 +5,47 @@ import { memo } from 'react'
 import { Link } from 'react-router-dom'
 
 type ContentType = {
-  title: string
-  date: string
+  subject: string
+  createdAt: string
+  id: string | number
+  path: string
   userName: string
-  href: string // TODO: 오브젝트 형태로바꾸끼
   answerYN?: boolean // 질문, 답변 게시판용
 }
 type BoardListType = {
   addClassName?: string
-  content: ContentType[]
+  loading?: boolean
+  content: ContentType[] | []
 }
 
-function BoardList({ addClassName, content }: BoardListType) {
+function BoardList({ addClassName, loading = true, content }: BoardListType) {
   return (
     <ul css={style} className={addClassName}>
-      {content.length ? (
-        content.map(({ title, date, userName, href, answerYN }: ContentType, idx) => {
-          return (
-            <li className="board_list" key={idx}>
-              {answerYN && <span className="badge_answer">V</span>}
-              <div className="board_left">
-                <Link to={href} className="board_title">
-                  {title}
-                </Link>
-              </div>
-              <div className="board_right">
-                <span className="board_user">{userName}</span>
-                <span className="board_date">{date}</span>
-              </div>
-            </li>
-          )
-        })
+      {loading ? (
+        <></>
       ) : (
-        <li>게시글이 없습니다.</li>
+        <>
+          {content.length ? (
+            content.map(({ subject, createdAt, id, path, userName, answerYN }: ContentType, idx) => {
+              return (
+                <li className="board_list" key={id}>
+                  {answerYN && <span className="badge_answer">V</span>}
+                  <div className="board_left">
+                    <Link to={`${path}?id=${id}`} className="board_title">
+                      {subject}
+                    </Link>
+                  </div>
+                  <div className="board_right">
+                    <span className="board_user">{userName}</span>
+                    <span className="board_date">{createdAt}</span>
+                  </div>
+                </li>
+              )
+            })
+          ) : (
+            <li className="empty_list">게시글이 없습니다.</li>
+          )}
+        </>
       )}
     </ul>
   )
@@ -47,6 +55,10 @@ const style = css`
   border-top: 2rem solid ${COLORS.SecondGray};
   border-bottom: 2rem solid ${COLORS.SecondGray};
   font-size: 15rem;
+  .empty_list {
+    padding: 30rem 0rem;
+    text-align: center;
+  }
   .board_list {
     display: flex;
     align-items: center;

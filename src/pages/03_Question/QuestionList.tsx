@@ -4,34 +4,38 @@ import { BoardList, Typo } from '@components/index'
 import Header from '@layouts/Header'
 
 type ContentType = {
-  title: string
-  date: string
+  subject: string
+  createdAt: string
+  id: string | number
+  path: string
   userName: string
-  href: string // TODO: 오브젝트 형태로바꾸끼
   answerYN?: boolean // 질문, 답변 게시판용
 }
 
 const qnaContent: ContentType[] = [
   {
-    title: 'do와 관련하여 질문있습니다.',
-    date: '2021-11-01',
+    subject: 'do와 관련하여 질문있습니다.',
+    createdAt: '2021-11-01',
     userName: '김회원',
-    href: '/qna/detail',
+    path: '/qna/detail',
     answerYN: false,
+    id: 4,
   },
   {
-    title: 'The population is/are increasing 주어가 3인칭 단수라서 단수동사인 is를 쓰잖아요',
-    date: '2021-10-28',
+    subject: 'The population is/are increasing 주어가 3인칭 단수라서 단수동사인 is를 쓰잖아요',
+    createdAt: '2021-10-28',
     userName: '김회원',
-    href: '/qna/detail',
+    path: '/qna/detail',
     answerYN: true,
+    id: 5,
   },
   {
-    title: '문제를 풀다가 "My brother is sitting watching TV."라는 문장을 봤습니다.',
-    date: '2021-10-28',
+    subject: '문제를 풀다가 "My brother is sitting watching TV."라는 문장을 봤습니다.',
+    createdAt: '2021-10-28',
     userName: '김회원',
-    href: '/qna/detail',
+    path: '/qna/detail',
     answerYN: true,
+    id: 6,
   },
 ]
 

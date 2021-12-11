@@ -2,36 +2,40 @@ import { Avatar, BoardList, Typo, InfoTable, Button, Input, BoardTable } from '@
 import ProfileImage from '@assets/profile01.jpg'
 import { ReactComponent as Menu } from '@assets/icon_menu.svg'
 type ContentType = {
-  title: string
-  date: string
+  subject: string
+  createdAt: string
+  id: string | number
+  path: string
   userName: string
-  href: string // TODO: 오브젝트 형태로바꾸끼
   answerYN?: boolean // 질문, 답변 게시판용
 }
 
 const contentList1: ContentType[] = [
   {
-    title: '게시판 제목 게시판 제목 게시판 제목 게시판 제목',
-    date: '2021-03-01',
+    subject: '게시판 제목 게시판 제목 게시판 제목 게시판 제목',
+    createdAt: '2021-03-01',
     userName: '작서자 명',
-    href: '#',
-    answerYN: true,
+    path: '#',
+    answerYN: false,
+    id: 1,
   },
   {
-    title: '게시판 제목2 게시판 제목2 게시판 제목2 게시판 제목2 게시판 제목2 게시판 제목2 게시판 제목2 게시판 제목2',
-    date: '2021-03-01',
+    subject: '게시판 제목2 게시판 제목2 게시판 제목2 게시판 제목2 게시판 제목2 게시판 제목2 게시판 제목2 게시판 제목2',
+    createdAt: '2021-03-01',
     userName: '작성자2 작성자2',
-    href: '#',
+    path: '#',
     answerYN: true,
+    id: 12,
   },
 ]
 const contentList2: ContentType[] = [
   {
-    title: 'string1',
-    date: 'string1',
+    subject: 'string1',
+    createdAt: 'string1',
     userName: 'string1',
-    href: '#',
+    path: '#',
     answerYN: true,
+    id: 5,
   },
 ]
 function Common() {
@@ -56,7 +60,7 @@ function Common() {
       </Button>
       <hr />
       <h3>인풋</h3>
-      <Input labelText="제목" id="subject" type="text" name="subject" value="value" onChange={() => console.log('>')} />
+      <Input labelText="제목" id="title" type="text" name="title" value="value" onChange={() => console.log('>')} />
       <hr />
       <h3>텍스트</h3>
       <Typo type="title">제목 1</Typo>
