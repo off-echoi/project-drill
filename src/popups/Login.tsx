@@ -2,7 +2,7 @@
 import { css } from '@emotion/react'
 import COLORS from '@constants/colors'
 import { useCallback, useState } from 'react'
-import { useHistory } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { popupControll } from '@reducers/popup'
 import { goPage } from '@/modules'
@@ -15,12 +15,12 @@ type LoginInfo = {
   password: string
 }
 function Login() {
-  const history = useHistory()
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   const [loginInfo, setLoginInfo] = useState<LoginInfo>({ userId: '', password: '' })
   const [validation, setValidation] = useState<boolean>(true) // true 면 유효성 통과
   //로그인 상태값 입력
-  const _setLoginInfo = useCallback((e) => {
+  const _setLoginInfo = useCallback(e => {
     const {
       target: { name, value },
     } = e
@@ -40,12 +40,12 @@ function Login() {
       if (loginInfo.userId !== '' && loginInfo.password !== '') {
         setValidation(true)
         dispatch(popupControll({ type: 'POPUP_LOGIN_STATE', payload: false }))
-        goPage(url, history)
+        goPage(url, navigate)
       } else {
         setValidation(false)
       }
     },
-    [dispatch, history, loginInfo.password, loginInfo.userId]
+    [dispatch, navigate, loginInfo.password, loginInfo.userId]
   )
 
   return (

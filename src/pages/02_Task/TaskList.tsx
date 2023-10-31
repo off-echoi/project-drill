@@ -2,7 +2,7 @@
 import { css } from '@emotion/react'
 import { BoardList, Button, Typo } from '@components/index'
 import { useCallback } from 'react'
-import { useHistory } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import { goPage } from '@/modules'
 import Header from '@layouts/Header'
 import { ReactComponent as Write } from '@assets/icon_write.svg'
@@ -41,13 +41,13 @@ const taskContent: ContentType[] = [
   },
 ]
 function TaskList() {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const goToPage = useCallback(
-    (url) => {
-      goPage(url, history)
+    url => {
+      goPage(url, navigate)
     },
-    [history]
+    [navigate]
   )
   return (
     <>

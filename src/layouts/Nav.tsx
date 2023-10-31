@@ -31,18 +31,13 @@ function Nav() {
           </Avatar>
         </section>
         <ul>
-          {/* <li className="link_list">
-            <NavLink to="/" activeClassName="on">
-              내 정보 수정
-            </NavLink>
-          </li> */}
           <li className="link_list">
-            <NavLink to="/members" activeClassName="on">
+            <NavLink to="/members" className={isActive => (isActive ? 'on' : '')}>
               다른 회원 선택
             </NavLink>
           </li>
           <li className="link_list">
-            <NavLink to="/memberDelete" activeClassName="on">
+            <NavLink to="/memberDelete" className={isActive => (isActive ? 'on' : '')}>
               회원삭제
             </NavLink>
           </li>
@@ -50,7 +45,7 @@ function Nav() {
             <button onClick={() => alert('로그아웃 되었습니다.')}>로그아웃</button>
           </li>
           <li className="link_list">
-            <NavLink to="/withdraw" activeClassName="on">
+            <NavLink to="/withdraw" className={isActive => (isActive ? 'on' : '')}>
               서비스 탈퇴
             </NavLink>
           </li>
