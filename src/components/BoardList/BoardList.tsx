@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import COLORS from '@constants/colors'
+import COLORS from 'constants/colors'
 import { memo } from 'react'
 import { Link } from 'react-router-dom'
 

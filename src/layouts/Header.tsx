@@ -1,13 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import COLORS from '@constants/colors'
+import COLORS from 'constants/colors'
 import { memo, ReactElement, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Button, Typo } from '@components/index'
+import { Button, Typo } from 'components/index'
 import { useDispatch } from 'react-redux'
-import { popupControll } from '@/reducers/popup'
-import { ReactComponent as Menu } from '@assets/icon_menu.svg'
-import { ReactComponent as Back } from '@assets/icon_back.svg'
+import { popupControll } from 'reducers/popup'
+import { ReactComponent as Menu } from 'assets/icon_menu.svg'
+import { ReactComponent as Back } from 'assets/icon_back.svg'
 
 type HeaderType = {
   type?: 'menu' | 'back'

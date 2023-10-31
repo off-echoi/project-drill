@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { BoardList, Typo } from '@components/index'
-import Header from '@layouts/Header'
+import { BoardList, Typo } from 'components/index'
+import Header from 'layouts/Header'
 
 type ContentType = {
   subject: string

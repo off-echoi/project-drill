@@ -1,13 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import COLORS from '@constants/colors'
+import COLORS from 'constants/colors'
 import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
-import { ReactComponent as Task } from '@assets/barIcons/icon_task.svg'
-import { ReactComponent as Qna } from '@assets/barIcons/icon_qna.svg'
-import { ReactComponent as Info } from '@assets/barIcons/icon_info.svg'
-import { ReactComponent as Notice } from '@assets/barIcons/icon_notice.svg'
-import { ReactComponent as Analysis } from '@assets/barIcons/icon_analysis.svg'
+import { ReactComponent as Task } from 'assets/barIcons/icon_task.svg'
+import { ReactComponent as Qna } from 'assets/barIcons/icon_qna.svg'
+import { ReactComponent as Info } from 'assets/barIcons/icon_info.svg'
+import { ReactComponent as Notice } from 'assets/barIcons/icon_notice.svg'
+import { ReactComponent as Analysis } from 'assets/barIcons/icon_analysis.svg'
 
 function Bar() {
   return (

@@ -1,13 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { BoardList, Button, Typo } from '@components/index'
+import { BoardList, Button, Typo } from 'components/index'
 import { useCallback, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { goPage } from '@/modules'
-import { dbService } from '@/fbase'
+import { goPage } from 'modules'
+import { dbService } from 'fbase'
 import { collection, getDocs, query } from 'firebase/firestore'
-import Header from '@layouts/Header'
-import { ReactComponent as Write } from '@assets/icon_write.svg'
+import Header from 'layouts/Header'
+import { ReactComponent as Write } from 'assets/icon_write.svg'
 import moment from 'moment'
 
 type ContentType = {
@@ -48,7 +48,7 @@ function NoticeList() {
   }, [getNoticeList])
 
   const goToPage = useCallback(
-    url => {
+    (url: string) => {
       goPage(url, navigate)
     },
     [navigate]

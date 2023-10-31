@@ -1,6 +1,6 @@
-import { Avatar, BoardList, Typo, InfoTable, Button, Input, BoardTable } from '@components/index'
-import ProfileImage from '@assets/profile01.jpg'
-import { ReactComponent as Menu } from '@assets/icon_menu.svg'
+import { Avatar, BoardList, Typo, InfoTable, Button, Input, BoardTable } from 'components/index'
+import ProfileImage from 'assets/profile01.jpg'
+import { ReactComponent as Menu } from 'assets/icon_menu.svg'
 type ContentType = {
   subject: string
   createdAt: string

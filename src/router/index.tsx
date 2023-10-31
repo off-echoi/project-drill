@@ -1,6 +1,6 @@
-import { Switch, Route, Redirect } from 'react-router-dom'
-import Routes from '@/pages'
-import Main from '@/pages/00_Main/Main'
+import { Routes as Switch, Route, Navigate } from 'react-router-dom'
+import Routes from 'pages'
+import Main from 'pages/00_Main/Main'
 
 interface IRouteIndex {
   isLogged: boolean
@@ -8,16 +8,16 @@ interface IRouteIndex {
 function RouteIndex({ isLogged }: IRouteIndex) {
   return (
     <Switch>
-      {isLogged ? (
+      {!isLogged ? (
         <>
-          {Routes.map(({ path, component, exact }, idx) => {
-            return <Route path={path} exact={exact ? true : false} key={idx} component={component} />
+          {Routes.map(({ path, Component, exact }, idx) => {
+            return <Route path={path} key={idx} element={<Component />} />
           })}
         </>
       ) : (
-        <Route path="/" exact={true} component={Main} />
+        <Route path="*" element={<Navigate replace to="/" />} />
       )}
-      <Redirect from="*" to="/" />
+      <Route path="/" element={<Main />} />
     </Switch>
   )
 }

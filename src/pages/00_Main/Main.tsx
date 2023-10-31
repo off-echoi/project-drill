@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import COLORS from '@constants/colors'
+import COLORS from 'constants/colors'
 import { useDispatch } from 'react-redux'
 import { useCallback } from 'react'
-import { popupControll } from '@reducers/popup'
-import { ReactComponent as App } from '@assets/icon_app.svg'
+import { popupControll } from 'reducers/popup'
+import { ReactComponent as App } from 'assets/icon_app.svg'
 
 function Main() {
   const dispatch = useDispatch()

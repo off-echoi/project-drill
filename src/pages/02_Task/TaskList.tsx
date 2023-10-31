@@ -1,12 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { BoardList, Button, Typo } from '@components/index'
+import { BoardList, Button, Typo } from 'components/index'
 import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { goPage } from '@/modules'
-import Header from '@layouts/Header'
-import { ReactComponent as Write } from '@assets/icon_write.svg'
-// import { useGoPage } from '@/hook/useGoPage'
+import { goPage } from 'modules'
+import Header from 'layouts/Header'
+import { ReactComponent as Write } from 'assets/icon_write.svg'
+// import { useGoPage } from '@hook/useGoPage'
 
 type ContentType = {
   subject: string
@@ -44,7 +44,7 @@ function TaskList() {
   const navigate = useNavigate()
 
   const goToPage = useCallback(
-    url => {
+    (url: string) => {
       goPage(url, navigate)
     },
     [navigate]

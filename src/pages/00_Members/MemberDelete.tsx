@@ -1,16 +1,16 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import COLORS from '@constants/colors'
+import COLORS from 'constants/colors'
 import { useCallback } from 'react'
-import { Avatar, Typo } from '@components/index'
-import Header from '@layouts/Header'
-import ProfileImage1 from '@assets/profile01.jpg'
-import ProfileImage3 from '@assets/profile03.jpg'
-import ProfileImage4 from '@assets/profile04.jpg'
-import ProfileImage5 from '@assets/profile05.jpg'
+import { Avatar, Typo } from 'components/index'
+import Header from 'layouts/Header'
+import ProfileImage1 from 'assets/profile01.jpg'
+import ProfileImage3 from 'assets/profile03.jpg'
+import ProfileImage4 from 'assets/profile04.jpg'
+import ProfileImage5 from 'assets/profile05.jpg'
 
 function MemberDelete() {
-  const deleteMembers = useCallback((name) => {
+  const deleteMembers = useCallback((name: string) => {
     const response = window.confirm(`${name}회원을 삭제하시겠습니까?`)
     if (response) {
       alert(`${name}회원이 삭제되었습니다.`)

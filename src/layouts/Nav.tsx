@@ -1,14 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import COLORS from '@constants/colors'
+import COLORS from 'constants/colors'
 import { memo, useCallback } from 'react'
-import { Avatar, Button } from '@components/index'
+import { Avatar, Button } from 'components/index'
 import { NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { popupControll } from '@/reducers/popup'
-import { RootState } from '@reducers/index'
-import MyProfile from '@assets/profile02.jpg'
-import { ReactComponent as Close } from '@assets/icon_close.svg'
+import { popupControll } from 'reducers/popup'
+import { RootState } from 'reducers/index'
+import MyProfile from 'assets/profile02.jpg'
+import { ReactComponent as Close } from 'assets/icon_close.svg'
 
 function Nav() {
   const { NAV_STATE } = useSelector((state: RootState) => state.popup)

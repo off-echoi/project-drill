@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import COLORS from '@constants/colors'
-import { useCallback, useState } from 'react'
-import { Button, Typo } from '@components/index'
-import Header from '@layouts/Header'
+import COLORS from 'constants/colors'
+import React, { useCallback, useState } from 'react'
+import { Button, Typo } from 'components/index'
+import Header from 'layouts/Header'
 
 type WithdrawType = {
   code: 'code001' | 'code002' | 'code003'
@@ -15,7 +15,7 @@ function Withdraw() {
     code: 'code001',
     etc: '',
   })
-  const _setWithdraw = useCallback((e) => {
+  const _setWithdraw = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (e.target.value === 'code001' || e.target.value === 'code002') {
       setWithdraw({
         code: e.target.value,

@@ -31,110 +31,110 @@ interface IRoutes {
   title: string
   path: string
   exact?: boolean
-  component: React.FC
+  Component: React.FC
 }
 
 const Routes: IRoutes[] = [
   {
     title: '공통',
     path: '/common',
-    component: Common,
+    Component: Common,
     exact: true,
   },
   {
     title: '메인',
     path: '/',
-    component: Main,
+    Component: Main,
     exact: true,
   },
   {
     title: '관리 회원 선택',
     path: '/members',
-    component: Members,
+    Component: Members,
     exact: true,
   },
   {
     title: '관리 회원 삭제',
     path: '/memberDelete',
-    component: MemberDelete,
+    Component: MemberDelete,
     exact: true,
   },
   {
     title: '회원 정보',
     path: '/info',
-    component: Info,
+    Component: Info,
     exact: true,
   },
   {
     title: '과제',
     path: '/task',
-    component: TaskList,
+    Component: TaskList,
     exact: true,
   },
   {
     title: '과제 상세 - 읽기',
     path: '/task/detail',
-    component: TaskDetail,
+    Component: TaskDetail,
     exact: true,
   },
   {
     title: '과제 작성',
     path: '/task/write',
-    component: TaskWrite,
+    Component: TaskWrite,
     exact: true,
   },
   {
     title: '질문답',
     path: '/qna',
-    component: QuestionList,
+    Component: QuestionList,
     exact: true,
   },
   {
     title: '질문답 상세 - 읽기',
     path: '/qna/detail',
-    component: QuestionDetail,
+    Component: QuestionDetail,
     exact: true,
   },
   {
     title: '공지',
     path: '/notice',
-    component: NoticeList,
+    Component: NoticeList,
     exact: true,
   },
   {
     title: '공지 작성',
     path: '/notice/write',
-    component: NoticeWrite,
+    Component: NoticeWrite,
     exact: true,
   },
   {
     title: '공지 상세 - 읽기',
     path: '/notice/detail',
-    component: NoticeDetail,
+    Component: NoticeDetail,
     exact: true,
   },
   {
     title: '분석',
     path: '/analysis',
-    component: Analysis,
+    Component: Analysis,
     exact: true,
   },
   {
     title: '분석 작성',
     path: '/analysis/write',
-    component: AnalysisWrite,
+    Component: AnalysisWrite,
     exact: true,
   },
   {
     title: '서비스 탈퇴',
     path: '/withdraw',
-    component: Withdraw,
+    Component: Withdraw,
     exact: true,
   },
   {
     title: '카운터 테스트',
     path: '/counter',
-    component: Counter,
+    Component: Counter,
     exact: true,
   },
 ]

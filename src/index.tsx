@@ -1,28 +1,23 @@
+import App from 'App'
 import React from 'react'
-import ReactDOM from 'react-dom'
-import '@/reset.css'
-import '@/common.css'
-import App from '@/App'
-import reportWebVitals from '@/reportWebVitals'
+import 'reset.css'
+import 'common.css'
+import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import rootReducer from '@reducers/index'
 import { BrowserRouter } from 'react-router-dom'
+import rootReducer from './reducers'
+import { createStore } from 'redux'
 
 const store = createStore(rootReducer)
 
-ReactDOM.render(
+const container = document.getElementById('root') as HTMLElement
+const root = createRoot(container) // createRoot(container!) if you use TypeScript
+root.render(
   <Provider store={store}>
     <React.StrictMode>
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </React.StrictMode>
-  </Provider>,
-  document.getElementById('root')
+  </Provider>
 )
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals()

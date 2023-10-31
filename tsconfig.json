@@ -14,19 +14,20 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "baseUrl": "src",
     "paths": {
-      "@/*": ["*"],
-      "@assets/*": ["assets/*"],
-      "@components/*": ["components/*"],
-      "@constants/*": ["constants/*"],
-      "@layouts/*": ["layouts/*"],
-      "@pages/*": ["pages/*"],
-      "@reducers/*": ["reducers/*"],
-      "@router/*": ["router/*"],
-      "@hook/*": ["hook/*"]
+      "assets/*": ["assets/*"],
+      "components/*": ["components/*"],
+      "constants/*": ["constants/*"],
+      "layouts/*": ["layouts/*"],
+      "modules/*": ["modules/*"],
+      "pages/*": ["pages/*"],
+      "popups/*": ["popups/*"],
+      "reducers/*": ["reducers/*"],
+      "router/*": ["router/*"],
+      "hook/*": ["hook/*"]
     }
   },
-  "includes": ["src"]
+  "include": ["src", "*.ts", "*.tsx", "*.js", "*.jsx", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"]
 }
