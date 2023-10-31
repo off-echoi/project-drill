@@ -2,7 +2,7 @@
 import { css } from '@emotion/react'
 import { BoardList, Button, Typo } from '@components/index'
 import { useCallback, useEffect, useState } from 'react'
-import { useHistory } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import { goPage } from '@/modules'
 import { dbService } from '@/fbase'
 import { collection, getDocs, query } from 'firebase/firestore'
@@ -21,14 +21,14 @@ type ContentType = {
 function NoticeList() {
   const [loading, setLoading] = useState<boolean>(true)
   const [noticeList, setNoticeList] = useState<ContentType[]>([])
-  const history = useHistory()
+  const navigate = useNavigate()
 
   // 리스트 불러오기
   const getNoticeList = useCallback(async () => {
     const q = query(collection(dbService, 'notice'))
     const querySnapshot = await getDocs(q)
     let noticeList: ContentType[] = []
-    querySnapshot.forEach((doc) => {
+    querySnapshot.forEach(doc => {
       const _notice: ContentType = {
         // ...doc.data(),
         id: doc.id,
@@ -48,10 +48,10 @@ function NoticeList() {
   }, [getNoticeList])
 
   const goToPage = useCallback(
-    (url) => {
-      goPage(url, history)
+    url => {
+      goPage(url, navigate)
     },
-    [history]
+    [navigate]
   )
 
   return (

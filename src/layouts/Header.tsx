@@ -2,7 +2,7 @@
 import { css } from '@emotion/react'
 import COLORS from '@constants/colors'
 import { memo, ReactElement, useCallback } from 'react'
-import { useHistory } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import { Button, Typo } from '@components/index'
 import { useDispatch } from 'react-redux'
 import { popupControll } from '@/reducers/popup'
@@ -16,7 +16,7 @@ type HeaderType = {
 }
 
 function Header({ type = 'menu', pageName, children }: HeaderType) {
-  const history = useHistory()
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   // 사이드 네비 함수
   const fnNav = useCallback(() => {
@@ -25,8 +25,8 @@ function Header({ type = 'menu', pageName, children }: HeaderType) {
 
   // 뒤로가기
   const fnGoBack = useCallback(() => {
-    history.goBack()
-  }, [history])
+    navigate(-1)
+  }, [navigate])
 
   return (
     <header css={style}>

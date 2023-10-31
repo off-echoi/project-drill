@@ -14,31 +14,31 @@ function Bar() {
     <section css={style}>
       <ul className="bar_wrap">
         <li>
-          <NavLink to="/task" activeClassName="on" className="nav nav_task">
+          <NavLink to="/task" className={isActive => (isActive ? 'nav nav_task on' : 'nav nav_task}')}>
             <Task />
             <span>과제</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/qna" activeClassName="on" className="nav nav_qna">
+          <NavLink to="/qna" className={isActive => (isActive ? 'nav nav_qna on' : 'nav nav_qna')}>
             <Qna />
             <span>질문</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/info" activeClassName="on" className="nav nav_info">
+          <NavLink to="/info" className={isActive => (isActive ? 'nav nav_info on' : 'nav nav_info}')}>
             <Info />
             <span>정보</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/notice" activeClassName="on" className="nav nav_notice">
+          <NavLink to="/notice" className={isActive => (isActive ? 'nav nav_noti}c on' : 'nav nav_notice')}>
             <Notice />
             <span>공지</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/analysis" activeClassName="on" className="nav nav_ana">
+          <NavLink to="/analysis" className={isActive => (isActive ? 'nav nav_ana on' : 'nav nav_ana')}>
             <Analysis />
             <span>분석</span>
           </NavLink>
