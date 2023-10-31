@@ -1,12 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import COLORS from '@/constants/colors'
-import { Button, Input } from '@components/index'
-import { useCallback, useState } from 'react'
-import Header from '@layouts/Header'
+import COLORS from 'constants/colors'
+import { Button, Input } from 'components/index'
+import React, { useCallback, useState } from 'react'
+import Header from 'layouts/Header'
 import moment from 'moment'
 import 'moment/locale/ko'
-import { dbService } from '@/fbase'
+import { dbService } from 'fbase'
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 
 type NoticeType = {
@@ -22,7 +22,7 @@ const initialState: NoticeType = {
 function NoticeWrite() {
   const [notice, setNotice] = useState<NoticeType>(initialState)
 
-  const _setNotice = useCallback((e) => {
+  const _setNotice = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setNotice(
       (prev): NoticeType => ({
         ...prev,

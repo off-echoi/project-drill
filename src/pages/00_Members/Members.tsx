@@ -1,12 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { Link } from 'react-router-dom'
-import { Avatar, Typo } from '@components/index'
-import ProfileImage1 from '@assets/profile01.jpg'
-import ProfileImage3 from '@assets/profile03.jpg'
-import ProfileImage4 from '@assets/profile04.jpg'
-import ProfileImage5 from '@assets/profile05.jpg'
-import COLORS from '@/constants/colors'
+import { Avatar, Typo } from 'components/index'
+import ProfileImage1 from 'assets/profile01.jpg'
+import ProfileImage3 from 'assets/profile03.jpg'
+import ProfileImage4 from 'assets/profile04.jpg'
+import ProfileImage5 from 'assets/profile05.jpg'
+import COLORS from 'constants/colors'
 
 function Members() {
   return (

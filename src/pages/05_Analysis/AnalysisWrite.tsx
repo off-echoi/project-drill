@@ -1,12 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import COLORS from '@/constants/colors'
-import { Button, Input } from '@components/index'
+import COLORS from 'constants/colors'
+import { Button, Input } from 'components/index'
 import { useCallback } from 'react'
-import Header from '@layouts/Header'
-import { ReactComponent as Plus } from '@assets/icon_add.svg'
-import { ReactComponent as Update } from '@assets/icon_write.svg'
-import { ReactComponent as Delete } from '@assets/icon_delete.svg'
+import Header from 'layouts/Header'
+import { ReactComponent as Plus } from 'assets/icon_add.svg'
+import { ReactComponent as Update } from 'assets/icon_write.svg'
+import { ReactComponent as Delete } from 'assets/icon_delete.svg'
 
 function AnalysisWrite() {
   const fnAddList = useCallback(() => {

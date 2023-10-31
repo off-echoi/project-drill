@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { Avatar, Button, InfoTable } from '@components/index'
-import Header from '@layouts/Header'
-import ProfileImg from '@assets/profile01.jpg'
-import { ReactComponent as Setting } from '@assets/icon_setting.svg'
+import { Avatar, Button, InfoTable } from 'components/index'
+import Header from 'layouts/Header'
+import ProfileImg from 'assets/profile01.jpg'
+import { ReactComponent as Setting } from 'assets/icon_setting.svg'
 
 function Info() {
   return (

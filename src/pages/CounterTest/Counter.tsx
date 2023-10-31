@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '@reducers/index'
-import { increase, decrease, increaseBy } from '@reducers/counter'
-import Counter from '@components/TestCounter/Counter'
+import { RootState } from 'reducers/index'
+import { increase, decrease, increaseBy } from 'reducers/counter'
+import Counter from 'components/TestCounter/Counter'
 
 function CounterContainer() {
   const count = useSelector((state: RootState) => state.counter.count)

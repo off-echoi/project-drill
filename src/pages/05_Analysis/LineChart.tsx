@@ -1,4 +1,4 @@
-import COLORS from '@constants/colors'
+import COLORS from 'constants/colors'
 import { Line } from 'react-chartjs-2'
 
 const data = {

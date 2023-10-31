@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
-import RouteIndex from '@router/index'
+import RouteIndex from 'router'
 import { useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { popupControll } from '@/reducers/popup'
-import Bar from '@layouts/Bar'
-import Nav from '@layouts/Nav'
-import ModalPortal from '@layouts/ModalPortal'
-import Login from '@/popups/Login'
-import { RootState } from '@/reducers'
-import { authService } from '@/fbase'
+import { popupControll } from 'reducers/popup'
+import Bar from 'layouts/Bar'
+import Nav from 'layouts/Nav'
+import ModalPortal from 'layouts/ModalPortal'
+import Login from 'popups/Login'
+import { RootState } from 'reducers/index'
+import { authService } from 'fbase'
 
 function App() {
   const [isLogged, setIsLogged] = useState<boolean>(authService.currentUser !== null ? true : false)

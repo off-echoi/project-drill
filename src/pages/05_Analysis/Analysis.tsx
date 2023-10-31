@@ -1,21 +1,21 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { Button, Typo } from '@components/index'
+import { Button, Typo } from 'components/index'
 import LineChart from './LineChart'
 import { useCallback } from 'react'
-import { useHistory } from 'react-router'
-import { goPage } from '@/modules'
-import Header from '@layouts/Header'
-import { ReactComponent as Write } from '@assets/icon_write.svg'
+import { useNavigate } from 'react-router-dom'
+import { goPage } from 'modules'
+import Header from 'layouts/Header'
+import { ReactComponent as Write } from 'assets/icon_write.svg'
 
 function Analysis() {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const goToPage = useCallback(
     (url: string) => {
-      goPage(url, history)
+      goPage(url, navigate)
     },
-    [history]
+    [navigate]
   )
 
   return (

@@ -1,14 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { BoardTable, Button } from '@components/index'
-import { Fragment, useCallback, useState } from 'react'
-import Header from '@layouts/Header'
+import { BoardTable, Button } from 'components/index'
+import React, { Fragment, useCallback, useState } from 'react'
+import Header from 'layouts/Header'
 
 function QuestionDetail() {
   const answerYN: boolean = false
   const [answer, setAnswer] = useState<string>('')
 
-  const _setAnswer = useCallback((e) => {
+  const _setAnswer = useCallback((e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setAnswer(e.target.value)
   }, [])
 

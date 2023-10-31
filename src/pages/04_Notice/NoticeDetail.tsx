@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { BoardTable, Button } from '@components/index'
+import { BoardTable, Button } from 'components/index'
 import { useCallback } from 'react'
-import Header from '@layouts/Header'
-import { ReactComponent as Delete } from '@assets/icon_delete.svg'
+import Header from 'layouts/Header'
+import { ReactComponent as Delete } from 'assets/icon_delete.svg'
 
 function NoticeDetail() {
   const fnDelete = useCallback(() => {

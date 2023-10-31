@@ -1,14 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import COLORS from '@constants/colors'
-import { useCallback, useState } from 'react'
+import COLORS from 'constants/colors'
+import React, { useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { popupControll } from '@reducers/popup'
-import { goPage } from '@/modules'
-import { Input, Typo } from '@components/index'
-import ModalWrap from '@layouts/ModalWrap'
-import { ReactComponent as App } from '@assets/icon_app.svg'
+import { popupControll } from 'reducers/popup'
+import { goPage } from 'modules'
+import { Input, Typo } from 'components/index'
+import ModalWrap from 'layouts/ModalWrap'
+import { ReactComponent as App } from 'assets/icon_app.svg'
 
 type LoginInfo = {
   userId: string
@@ -20,7 +20,7 @@ function Login() {
   const [loginInfo, setLoginInfo] = useState<LoginInfo>({ userId: '', password: '' })
   const [validation, setValidation] = useState<boolean>(true) // true 면 유효성 통과
   //로그인 상태값 입력
-  const _setLoginInfo = useCallback(e => {
+  const _setLoginInfo = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {
       target: { name, value },
     } = e

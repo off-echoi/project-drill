@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { memo } from 'react'
-import { Button } from '@/components'
-import { ReactComponent as Close } from '@assets/icon_close.svg'
+import { Button } from 'components'
+import { ReactComponent as Close } from 'assets/icon_close.svg'
 
 type ModalWrapType = {
   onClose: () => void

@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import COLORS from '@/constants/colors'
-import { Button, Input } from '@components/index'
-import { useCallback, useState } from 'react'
-import Header from '@layouts/Header'
+import COLORS from 'constants/colors'
+import { Button, Input } from 'components/index'
+import { ChangeEvent, useCallback, useState } from 'react'
+import Header from 'layouts/Header'
 
 type TaskType = {
   subject: string
@@ -15,7 +15,7 @@ function TaskWrite() {
     content: '',
   })
 
-  const _setTask = useCallback((e) => {
+  const _setTask = useCallback((e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setTask(
       (prev): TaskType => ({
         ...prev,
