@@ -1,78 +1,76 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
-import COLORS from 'constants/colors'
-import { memo, ReactElement } from 'react'
+import { ReactNode } from 'react';
+import styled, { useTheme } from 'styled-components';
+import { UserIcon } from 'components/Icons/UserIcon';
+import { DirectionType } from 'components/varient';
+import { getStyleBasedOnCondition } from 'styles/styledUtils';
 
-type AvatarType = {
-  children?: ReactElement<HTMLImageElement>
-  name: string
-  date?: string // 클래스 날짜
-  type?: 'list' | 'photo'
+interface AvatarProps {
+  src?: string;
+  name?: string;
+  direction?: DirectionType;
+  children?: ReactNode;
+  date?: string; // ** TODO: 삭제 예정
+  type?: string; // ** TODO: 삭제 예정
 }
 
-function Avatar({ children, name, date, type = 'photo' }: AvatarType) {
-  return (
-    <div css={() => style(type)}>
-      <div className="img_wrap">{children}</div>
-      <div className="member_info">
-        <span className="member_name">{name}</span>
-        {date && <span className="member_schedule">{date}</span>}
-      </div>
-    </div>
-  )
-}
+const StyledAvatarWrap = styled.div<Pick<AvatarProps, 'direction'>>`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.md};
+  flex-direction: ${({ direction }) => direction};
+`;
 
-const style = (type: 'list' | 'photo') => {
-  let addStyle = ''
-  if (type === 'list') {
-    addStyle = `
-      display: flex;
-      align-items: center;
-      text-align: left;
-      .img_wrap {
-        width: 60rem;
-        height: 60rem;
-        margin: 0;
-      }
-      .member_info{
-        margin-left:10rem;
-      }
-      .member_name {
-        margin-top: 0;
-      }
-    `
-  } else {
-    addStyle = `
-      text-align: center;
-    `
+const StyledImageWrap = styled.div<Pick<AvatarProps, 'src'>>`
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  ${({ src, theme }) =>
+    getStyleBasedOnCondition(
+      //
+      Boolean(src),
+      `background-color: ${theme.color.white};`,
+      `background-color:  ${theme.color.gray9};
+       line-height : 50px;
+       color: ${theme.color.primary2};
+       font-size: ${theme.typography.size.xxl};
+       font-weight: ${theme.typography.weight.black};
+      `
+    )}
+  text-align: center;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
-  const commonstyle = css`
-    .img_wrap {
-      overflow: hidden;
-      width: 80rem;
-      height: 80rem;
-      margin: 0 auto;
-      border-radius: 100%;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-    .member_name {
-      display: block;
-      font-size: 16rem;
-      margin-top: 10rem;
-    }
-    .member_schedule {
-      display: block;
-      font-size: 14rem;
-      margin-top: 5rem;
-      color: ${COLORS.SecondGray};
-    }
-    ${addStyle}
-  `
-  return commonstyle
-}
+  svg {
+    margin-top: ${({ theme }) => theme.spacing.lg};
+  }
+`;
 
-export default memo(Avatar)
+const StyledInfoText = styled.span<Pick<AvatarProps, 'direction'>>`
+  display: block;
+  font-size: ${({ theme }) => theme.typography.size.md};
+  font-weight: ${({ theme }) => theme.typography.weight.bold};
+  text-align: ${({ direction }) => (direction === 'column' ? `center;` : `left;`)};
+`;
+
+export const Avatar = ({ src = '', direction = 'column', name = '', children }: AvatarProps) => {
+  const theme = useTheme();
+  return (
+    <StyledAvatarWrap direction={direction}>
+      <StyledImageWrap>
+        {src || name ? (
+          <>
+            {src && <img src={src} alt={`${name} 프로필`} />}
+            {name && <>{name[0]}</>}
+          </>
+        ) : (
+          <UserIcon size="25" color={theme.color.primary2} />
+        )}
+      </StyledImageWrap>
+      {name && <StyledInfoText direction={direction}>{name}</StyledInfoText>}
+      {children}
+    </StyledAvatarWrap>
+  );
+};
