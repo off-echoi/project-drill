@@ -1,7 +1,7 @@
-import { RiCheckboxFill, RiCheckboxBlankLine } from 'react-icons/ri'
-import { InputIconProps } from './icon'
+import { RiCheckboxFill, RiCheckboxBlankLine } from 'react-icons/ri';
+import { InputIconProps } from '../components';
 
 export const CheckBoxIcon = ({ size = '30', color = '#555', checked = false }: InputIconProps) => {
-  const CheckBoxIconComponent = checked ? RiCheckboxFill : RiCheckboxBlankLine
-  return CheckBoxIconComponent({ size, color })
-}
+  const CheckBoxIconComponent = checked ? RiCheckboxFill : RiCheckboxBlankLine;
+  return CheckBoxIconComponent({ size, color });
+};
