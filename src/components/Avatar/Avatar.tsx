@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import styled, { useTheme } from 'styled-components';
-import { UserIcon } from 'components/Icons/UserIcon';
+import { UserIcon } from 'components';
 import { DirectionType } from 'components/varient';
 import { getStyleBasedOnCondition } from 'styles/styledUtils';
 
