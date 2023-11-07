@@ -1,7 +1,7 @@
 // 사용자 프로필 아바타
 export { Avatar } from './avatar/Avatar';
 // 게시판류 목록
-export { default as BoardList } from './BoardList/BoardList';
+export { BoardList } from './boardList/BoardList';
 // 게시판류 읽기
 export { default as BoardTable } from './BoardTable/BoardTable';
 // 사용자 정보
@@ -14,3 +14,34 @@ export { ReaderOnlyText } from './typo/ReaderOnlyText';
 export { default as Button } from './Button/Button';
 // 인풋
 export { default as Input } from './Input/Input';
+// cta 박스
+export { CTABox } from './ctaBox/CTABox';
+
+// 아이콘
+export { AddCircleIcon } from './icons/AddCircleIcon';
+export { AddIcon } from './icons/AddIcon';
+export { ArrowIcon } from './icons/ArrowIcon';
+export { ChartIcon } from './icons/ChartIcon';
+export { CheckBoxIcon } from './icons/CheckBoxIcon';
+export { CloseIcon } from './icons/CloseIcon';
+export { DeleteIcon } from './icons/DeleteIcon';
+export { DrillIcon } from './icons/DrillIcon';
+export { FilterIcon } from './icons/FilterIcon';
+export { HourGlassIcon } from './icons/HourGlassIcon';
+export { ImageIcon } from './icons/ImageIcon';
+export { InfoIcon } from './icons/InfoIcon';
+export { LoaderIcon } from './icons/LoaderIcon';
+export { MenuIcon } from './icons/MenuIcon';
+export { MinusCircleIcon } from './icons/MinusCircleIcon';
+export { PencilIcon } from './icons/PencilIcon';
+export { QnAIcon } from './icons/QnAIcon';
+export { RadioIcon } from './icons/RadioIcon';
+export { SearchIcon } from './icons/SearchIcon';
+export { SettingIcon } from './icons/SettingIcon';
+export { TaskIcon } from './icons/TaskIcon';
+export { UploadIcon } from './icons/UploadIcon';
+export { UserIcon } from './icons/UserIcon';
+
+// 레이아웃
+export { BottomNav } from './layout/BottomNav'; // 하단 앱바
+export { Header } from './layout/Header'; // 하단 앱바
