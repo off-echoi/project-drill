@@ -1,56 +1,68 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
-import COLORS from 'constants/colors'
-import { memo } from 'react'
-import { Link } from 'react-router-dom'
+import COLORS from 'constants/colors';
+import { Link } from 'react-router-dom';
+import { styled } from 'styled-components';
+import { Typography } from 'components';
 
 type ContentType = {
-  subject: string
-  createdAt: string
-  id: string | number
-  path: string
-  userName: string
-  answerYN?: boolean // 질문, 답변 게시판용
-}
-type BoardListType = {
-  addClassName?: string
-  loading?: boolean
-  content: ContentType[] | []
+  subject: string;
+  createdAt: string;
+  id: string | number;
+  path: string;
+  userName: string;
+  answerYN?: boolean; // 질문, 답변 게시판용
+};
+
+interface BoardListProps {
+  content: ContentType[] | [];
+  loading?: any; // TODO: 삭제 예정
 }
 
-function BoardList({ addClassName, loading = true, content }: BoardListType) {
+const StyledBoardUl = styled.ul`
+  border-top: ${({ theme }) => `2px solid ${theme.color.gray5}`};
+  border-bottom: ${({ theme }) => `2px solid ${theme.color.gray5}`};
+  font-size: ${({ theme }) => `${theme.typography.size.md}`};
+`;
+const StyledBoardLi = styled.li`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: ${({ theme }) => `${theme.spacing.md} ${theme.spacing.sm}`};
+  & + li {
+    border-top: ${({ theme }) => `1px solid ${theme.color.gray5}`};
+  }
+`;
+
+export const BoardList = ({ content }: BoardListProps) => {
   return (
-    <ul css={style} className={addClassName}>
-      {loading ? (
-        <></>
-      ) : (
-        <>
-          {content.length ? (
-            content.map(({ subject, createdAt, id, path, userName, answerYN }: ContentType, idx) => {
-              return (
-                <li className="board_list" key={id}>
-                  {answerYN && <span className="badge_answer">V</span>}
-                  <div className="board_left">
-                    <Link to={`${path}?id=${id}`} className="board_title">
+    <StyledBoardUl>
+      <>
+        {content.length ? (
+          content.map(({ subject, createdAt, id, path, userName, answerYN }: ContentType, idx) => {
+            return (
+              <StyledBoardLi key={id}>
+                {answerYN && <span className="badge_answer">V</span>}
+                <div className="board_left">
+                  <Link to={`${path}?id=${id}`} className="board_title">
+                    <Typography as="span" typoType="body2">
                       {subject}
-                    </Link>
-                  </div>
-                  <div className="board_right">
-                    <span className="board_user">{userName}</span>
-                    <span className="board_date">{createdAt}</span>
-                  </div>
-                </li>
-              )
-            })
-          ) : (
-            <li className="empty_list">게시글이 없습니다.</li>
-          )}
-        </>
-      )}
-    </ul>
-  )
-}
-const style = css`
+                    </Typography>
+                  </Link>
+                </div>
+                <div className="board_right">
+                  <span className="board_user">{userName}</span>
+                  <span className="board_date">{createdAt}</span>
+                </div>
+              </StyledBoardLi>
+            );
+          })
+        ) : (
+          <li className="empty_list">게시글이 없습니다.</li>
+        )}
+      </>
+    </StyledBoardUl>
+  );
+};
+const style = `
   margin-bottom: 10rem;
   border-top: 2rem solid ${COLORS.SecondGray};
   border-bottom: 2rem solid ${COLORS.SecondGray};
@@ -103,6 +115,4 @@ const style = css`
     display: block;
     padding: 2.5rem 0;
   }
-`
-
-export default memo(BoardList)
+`;

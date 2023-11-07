@@ -1,21 +1,19 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
-import { BoardList, Button, Typo } from 'components/index'
-import { useCallback } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { goPage } from 'modules'
-import Header from 'layouts/Header'
-import { ReactComponent as Write } from 'assets/icon_write.svg'
+import { BoardList, Button, CTABox } from 'components/index';
+import { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { goPage } from 'modules';
+import Header from 'layouts/Header';
+import { ReactComponent as Write } from 'assets/icon_write.svg';
 // import { useGoPage } from '@hook/useGoPage'
 
 type ContentType = {
-  subject: string
-  createdAt: string
-  id: string | number
-  path: string
-  userName: string
-  answerYN?: boolean // 질문, 답변 게시판용
-}
+  subject: string;
+  createdAt: string;
+  id: string | number;
+  path: string;
+  userName: string;
+  answerYN?: boolean; // 질문, 답변 게시판용
+};
 
 const taskContent: ContentType[] = [
   {
@@ -39,30 +37,28 @@ const taskContent: ContentType[] = [
     path: '/task/detail',
     id: 3,
   },
-]
-function TaskList() {
-  const navigate = useNavigate()
+];
+function TaskListPage() {
+  const navigate = useNavigate();
 
   const goToPage = useCallback(
     (url: string) => {
-      goPage(url, navigate)
+      goPage(url, navigate);
     },
     [navigate]
-  )
+  );
   return (
     <>
       <Header pageName="과제">
-        <Button type="icon" onClick={() => goToPage('/task/write')} addClassName="btn_gray">
+        <Button type="icon" onClick={() => goToPage('/task/write')} addClassName="btn_gray" ariaLabel="과제 등록">
           <Write />
-          <span className="hidden">과제 등록</span>
         </Button>
       </Header>
-      <section className="header_section" css={style}>
-        <Typo type="pageNotice">회원님이 해올 수업과제를 등록해주세요.</Typo>
+      <section className="header_section">
+        <CTABox content="회원님이 해올 수업과제를 등록해주세요." />
         <BoardList content={taskContent} />
       </section>
     </>
-  )
+  );
 }
-const style = css``
-export default TaskList
+export default TaskListPage;
