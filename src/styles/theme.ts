@@ -1,5 +1,10 @@
 import { DefaultTheme } from 'styled-components';
 
+const HEIGHT = {
+  bottomNav: '52px',
+  header: '52px',
+} as const;
+
 const COLOR = {
   primary1: '#2778e9',
   primary2: '#161b75',
@@ -34,6 +39,7 @@ const TYPOGRAPHY = {
     md: '16px',
     sm: '14px',
     xs: '12px',
+    xxs: '10px',
   },
 } as const;
 
@@ -81,6 +87,7 @@ const Z_INDEX = {
   maximum: 1000,
 } as const;
 
+export type HeightTypes = typeof HEIGHT;
 export type ColorTypes = typeof COLOR;
 export type TypographyTypes = typeof TYPOGRAPHY;
 export type SpacingTypes = typeof SPACING;
@@ -89,6 +96,7 @@ export type RoundedTypes = typeof ROUNDED;
 export type ZIndexTypes = typeof Z_INDEX;
 
 export const theme: DefaultTheme = {
+  height: HEIGHT,
   color: COLOR,
   typography: TYPOGRAPHY,
   spacing: SPACING,

@@ -1,8 +1,9 @@
 import 'styled-components';
-import { ColorsTypes, TypographyTypes, SpacingTypes, ShadowTypes, RoundedTypes, ZIndexTypes } from './theme';
+import { HeightTypes, ColorsTypes, TypographyTypes, SpacingTypes, ShadowTypes, RoundedTypes, ZIndexTypes } from './theme';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
+    height: HeightTypes;
     color: ColorsTypes;
     typography: TypographyTypes;
     spacing: SpacingTypes;
