@@ -10,6 +10,7 @@ interface TypographyProps {
   color?: ColorTypes;
   align?: AlignType;
   children: string | ReactNode;
+  className?: string;
 }
 
 const StyledTypography = styled.div<TypographyProps>`
@@ -94,7 +95,7 @@ const StyledTypography = styled.div<TypographyProps>`
   }}
 `;
 
-export const Typography = ({ typoType = 'body2', align = 'left', as, color, children }: TypographyProps) => {
+export const Typography = ({ typoType = 'body2', align = 'left', as, color, children, className = '' }: TypographyProps) => {
   // typoType에 따라 component의 ElementType변경
   const getAsElement = () => {
     switch (typoType) {
@@ -126,7 +127,7 @@ export const Typography = ({ typoType = 'body2', align = 'left', as, color, chil
   const Component = as || getAsElement();
 
   return (
-    <StyledTypography as={Component} color={color} typoType={typoType} align={align}>
+    <StyledTypography as={Component} color={color} typoType={typoType} align={align} className={className}>
       {children}
     </StyledTypography>
   );
