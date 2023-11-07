@@ -33,6 +33,7 @@ export { InfoIcon } from './icons/InfoIcon';
 export { LoaderIcon } from './icons/LoaderIcon';
 export { MenuIcon } from './icons/MenuIcon';
 export { MinusCircleIcon } from './icons/MinusCircleIcon';
+export { NoContentIcon } from './icons/NoContentIcon';
 export { PencilIcon } from './icons/PencilIcon';
 export { QnAIcon } from './icons/QnAIcon';
 export { RadioIcon } from './icons/RadioIcon';
@@ -45,3 +46,4 @@ export { UserIcon } from './icons/UserIcon';
 // 레이아웃
 export { BottomNav } from './layout/BottomNav'; // 하단 앱바
 export { Header } from './layout/Header'; // 하단 앱바
+export { NoContent } from './layout/NoContent'; // 컨텐츠 없음 레이아웃
