@@ -1,14 +1,15 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
-import COLORS from 'constants/colors'
-import { Fragment, memo } from 'react'
+import { css } from '@emotion/react';
+import COLORS from 'constants/colors';
+import { Fragment, memo } from 'react';
 
 type TypoType = {
-  type: 'title' | 'subTitle' | 'text' | 'pageNotice'
-  children: string
-  addClassName?: string
-}
-function Typo({ type, children, addClassName }: TypoType) {
+  type: 'title' | 'subTitle' | 'text' | 'pageNotice';
+  children: string;
+  addClassName?: string; // ** TODO: 삭제 예정
+};
+
+export const Typo = ({ type, children, addClassName }: TypoType) => {
   return (
     <>
       {type === 'title' && (
@@ -30,7 +31,7 @@ function Typo({ type, children, addClassName }: TypoType) {
                   {line}
                   <br />
                 </Fragment>
-              )
+              );
             })}
         </p>
       )}
@@ -44,37 +45,37 @@ function Typo({ type, children, addClassName }: TypoType) {
                   {line}
                   <br />
                 </Fragment>
-              )
+              );
             })}
         </p>
       )}
     </>
-  )
-}
+  );
+};
 
 const titleStyle = css`
   font-size: 20rem;
   text-align: center;
   color: ${COLORS.DarkBlack};
-`
+`;
 
 const subTitleStyle = css`
   font-size: 18rem;
   text-align: center;
   color: ${COLORS.DarkBlack};
-`
+`;
 const textStyle = css`
   margin-top: 10rem;
   font-size: 16rem;
   text-align: center;
   line-height: 1.4;
   color: ${COLORS.SecondGray};
-`
+`;
 const pageNoticeStyle = css`
   margin: 20rem 0;
   font-size: 16rem;
   text-align: center;
   line-height: 1.4;
   color: ${COLORS.SecondGray};
-`
-export default memo(Typo)
+`;
+export default memo(Typo);
