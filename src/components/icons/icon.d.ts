@@ -1,8 +1,5 @@
 import { IconBaseProps } from 'react-icons';
 
-/**
- * 아이콘 관련 type
- */
 // 체크박스, 라디오버튼 등 인풋 관련 Icon
 export type CheckedType = boolean;
 export interface InputIconProps extends IconBaseProps {
