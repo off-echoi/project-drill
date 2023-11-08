@@ -10,11 +10,15 @@ export { default as InfoTable } from './InfoTable/InfoTable';
 export { Typo } from './typo/Typo'; // TODO 삭제 및 Typography로 대체예정
 export { Typography } from './typo/Typography';
 export { ReaderOnlyText } from './typo/ReaderOnlyText';
-// 버튼
-export { default as Button } from './Button/Button';
-// 인풋
+// * From 요소
+// ** 버튼
+export { default as Button } from './button/Button';
+export { Button_v2 } from './button/Button_v2';
+// ** 인풋
 export { default as Input } from './Input/Input';
-// cta 박스
+
+// * 일반
+// ** cta 박스
 export { CTABox } from './ctaBox/CTABox';
 
 // 아이콘
@@ -47,3 +51,7 @@ export { UserIcon } from './icons/UserIcon';
 export { BottomNav } from './layout/BottomNav'; // 하단 앱바
 export { Header } from './layout/Header'; // 하단 앱바
 export { NoContent } from './layout/NoContent'; // 컨텐츠 없음 레이아웃
+
+// 로딩
+export { ContentLoading } from './loading/ContentLoading'; // 화면 일부만 덮는 로딩레이어
+export { FullLoading } from './loading/FullLoading'; // 화면 일부만 덮는 로딩레이어
