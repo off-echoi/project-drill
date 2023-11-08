@@ -45,26 +45,37 @@
 - [x] Avatar -- 기존 컴포넌트에서 사용하지 않는 props 제거
 - [ ] BoardList
 - [ ] BoardTable
-- [ ] Button
+
+-~~[ ] Button~~ -- 기존에 사용하던 페이지 Typography로 변경 및 props 점검
+
+- [ ] Button_v2 --new 컴포넌트변경 후 이름 수정하기
+
 - [ ] InfoTable
+
 - [ ] Input
+
 - [x] layout/BottomNav -- 기존 컴포넌트 대체 해야함
+
 - [ ] layout/Container -- 기존 컴포넌트 대체 해야함
 - [ ] layout/Header -- 기존 컴포넌트 대체 해야함
 - [ ] layout/Main -- 기존 컴포넌트 대체 해야함
 - [ ] layout/SideNav -- 기존 컴포넌트 대체 해야함
+
 - [ ] layout/Modal -- 기존 컴포넌트 대체 해야함
 - [ ] Task
 - [x] typo/Typography
 - ~~[ ] typo/Typo~~ -- 기존에 사용하던 페이지 Typography로 변경 및 props 점검
 - [x] CTABox --new
 - [x] Icons --new
+
 - [ ] layout/Section --new
+
 - [ ] Chart --new
 - [ ] Badge --new
 - [ ] Accordion --new
-- [ ] NoContent --new
-- [ ] Loading --new
+- [x] NoContent --new
+- [x] Loading --new
+
 - [ ] Grid(?) --new
 
 [상태관리 - 리덕스]
