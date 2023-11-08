@@ -2,7 +2,7 @@ import { ElementType, ReactNode } from 'react';
 import styled from 'styled-components';
 import { AlignType } from 'components/varient';
 import { getStyleBasedOnCondition } from 'styles/styledUtils';
-import { ColorTypes } from 'styles/theme';
+import { ColorTypes, theme } from 'styles/theme';
 
 interface TypographyProps {
   typoType: 'heading1' | 'heading2' | 'heading3' | 'sub1' | 'sub2' | 'sub3' | 'body1' | 'body2' | 'body3' | 'caption1' | 'caption2' | 'caption3';
@@ -17,81 +17,41 @@ const StyledTypography = styled.div<TypographyProps>`
   line-height: 1.4;
   text-align: ${({ align }) => align};
 
-  ${({ color, theme }) =>
+  ${({ color }) =>
     getStyleBasedOnCondition(
       //
       Boolean(color),
       `color: ${color};`,
       `color: ${theme.color.gray3};`
     )}
-  ${({ typoType, theme }) => {
-    switch (typoType) {
-      case 'heading1':
-        return `
-        font-size: ${theme.typography.size.xxl};
-        font-weight: ${theme.typography.weight.extrabold};
-        `;
-      case 'heading2':
-        return `
-        font-size: ${theme.typography.size.xl};
-        font-weight: ${theme.typography.weight.extrabold};
-        `;
-      case 'heading3':
-        return `
-        font-size: ${theme.typography.size.lg};
-        font-weight: ${theme.typography.weight.extrabold};
-        `;
-      case 'sub1':
-        return `
-        font-size: ${theme.typography.size.lg};
-        font-weight: ${theme.typography.weight.bold};
-        `;
-      case 'sub2':
-        return `
-        font-size: ${theme.typography.size.md};
-        font-weight: ${theme.typography.weight.bold};
-        `;
-      case 'sub3':
-        return `
-        font-size: ${theme.typography.size.sm};
-        font-weight: ${theme.typography.weight.bold};
-        `;
-      case 'body1':
-        return `
-        font-size: ${theme.typography.size.md};
-        font-weight: ${theme.typography.weight.normal};
-        `;
-      case 'body2':
-        return `
-        font-size: ${theme.typography.size.sm};
-        font-weight: ${theme.typography.weight.normal};
-        `;
-      case 'body3':
-        return `
-        font-size: ${theme.typography.size.xs};
-        font-weight: ${theme.typography.weight.normal};
-        `;
-      case 'caption1':
-        return `
-        font-size: ${theme.typography.size.md};
-        font-weight: ${theme.typography.weight.bold};
-        `;
-      case 'caption2':
-        return `
-        font-size: ${theme.typography.size.sm};
-        font-weight: ${theme.typography.weight.bold};
-        `;
-      case 'caption3':
-        return `
-        font-size: ${theme.typography.size.xs};
-        font-weight: ${theme.typography.weight.bold};
-        `;
-      default:
-        return `
-        font-size: ${theme.typography.size.sm};
-        font-weight: ${theme.typography.weight.normal};
-        `;
-    }
+  ${({ typoType }) => {
+    const typoTheme = {
+      heading1: `font-size: ${theme.typography.size.xxl};
+                 font-weight: ${theme.typography.weight.extrabold};`,
+      heading2: `font-size: ${theme.typography.size.xl};
+                  font-weight: ${theme.typography.weight.extrabold};`,
+      heading3: `font-size: ${theme.typography.size.lg};
+                 font-weight: ${theme.typography.weight.extrabold};`,
+      sub1: `font-size: ${theme.typography.size.lg};
+             font-weight: ${theme.typography.weight.bold};`,
+      sub2: `font-size: ${theme.typography.size.md};
+             font-weight: ${theme.typography.weight.bold};`,
+      sub3: `font-size: ${theme.typography.size.sm};
+             font-weight: ${theme.typography.weight.bold};`,
+      body1: `font-size: ${theme.typography.size.md};
+              font-weight: ${theme.typography.weight.normal};`,
+      body2: `font-size: ${theme.typography.size.sm};
+              font-weight: ${theme.typography.weight.normal};`,
+      body3: `font-size: ${theme.typography.size.xs};
+              font-weight: ${theme.typography.weight.normal};`,
+      caption1: `font-size: ${theme.typography.size.md};
+                 font-weight: ${theme.typography.weight.bold};`,
+      caption2: `font-size: ${theme.typography.size.sm};
+                 font-weight: ${theme.typography.weight.bold};`,
+      caption3: `font-size: ${theme.typography.size.xs};
+                 font-weight: ${theme.typography.weight.bold};`,
+    };
+    return typoTheme[typoType];
   }}
 `;
 
