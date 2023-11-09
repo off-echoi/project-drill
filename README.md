@@ -58,12 +58,13 @@
 - [x] typo/Typography
 - ~~[ ] typo/Typo~~ -- 기존에 사용하던 페이지 Typography로 변경 및 props 점검
 - [x] CTABox --new
+- [ ] StatusBox --new
 - [x] Icons --new
 - [ ] layout/Section --new
 - [ ] Chart --new
 - [ ] Badge --new
 - [ ] Accordion --new
-- [ ] NoContent --new
+- [x] NoContent --new
 - [ ] Loading --new
 - [ ] Grid(?) --new
 
