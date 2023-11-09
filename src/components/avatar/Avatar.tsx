@@ -3,6 +3,7 @@ import styled, { useTheme } from 'styled-components';
 import { UserIcon } from 'components';
 import { DirectionType } from 'components/varient';
 import { getStyleBasedOnCondition } from 'styles/styledUtils';
+import { theme } from 'styles/theme';
 
 interface AvatarProps {
   src?: string;
@@ -16,7 +17,7 @@ interface AvatarProps {
 const StyledAvatarWrap = styled.div<Pick<AvatarProps, 'direction'>>`
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => theme.spacing.md};
+  gap: ${theme.spacing.md};
   flex-direction: ${({ direction }) => direction};
 `;
 
@@ -25,7 +26,7 @@ const StyledImageWrap = styled.div<Pick<AvatarProps, 'src'>>`
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  ${({ src, theme }) =>
+  ${({ src }) =>
     getStyleBasedOnCondition(
       //
       Boolean(src),
@@ -44,33 +45,35 @@ const StyledImageWrap = styled.div<Pick<AvatarProps, 'src'>>`
     object-fit: cover;
   }
   svg {
-    margin-top: ${({ theme }) => theme.spacing.lg};
+    margin-top: ${theme.spacing.lg};
   }
 `;
 
 const StyledInfoText = styled.span<Pick<AvatarProps, 'direction'>>`
   display: block;
-  font-size: ${({ theme }) => theme.typography.size.md};
-  font-weight: ${({ theme }) => theme.typography.weight.bold};
+  font-size: ${theme.typography.size.md};
+  font-weight: ${theme.typography.weight.bold};
   text-align: ${({ direction }) => (direction === 'column' ? `center;` : `left;`)};
 `;
 
 export const Avatar = ({ src = '', direction = 'column', name = '', children }: AvatarProps) => {
   const theme = useTheme();
   return (
-    <StyledAvatarWrap direction={direction}>
-      <StyledImageWrap>
-        {src || name ? (
-          <>
+    <>
+      {!src && !name ? (
+        <StyledImageWrap>
+          <UserIcon size="25" color={theme.color.primary2} />
+        </StyledImageWrap>
+      ) : (
+        <StyledAvatarWrap direction={direction}>
+          <StyledImageWrap>
             {src && <img src={src} alt={`${name} 프로필`} />}
             {name && <>{name[0]}</>}
-          </>
-        ) : (
-          <UserIcon size="25" color={theme.color.primary2} />
-        )}
-      </StyledImageWrap>
-      {name && <StyledInfoText direction={direction}>{name}</StyledInfoText>}
-      {children}
-    </StyledAvatarWrap>
+          </StyledImageWrap>
+          {name && <StyledInfoText direction={direction}>{name}</StyledInfoText>}
+          {children}
+        </StyledAvatarWrap>
+      )}
+    </>
   );
 };
