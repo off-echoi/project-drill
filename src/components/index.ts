@@ -7,15 +7,17 @@ export { default as BoardTable } from './BoardTable/BoardTable';
 // 사용자 정보
 export { default as InfoTable } from './InfoTable/InfoTable';
 // 텍스트
-export { Typo } from './typo/Typo'; // TODO 삭제 및 Typography로 대체예정
+export { Typo } from './typo/Typo'; // TODO 삭제 및 Typography 로 대체예정
 export { Typography } from './typo/Typography';
 export { ReaderOnlyText } from './typo/ReaderOnlyText';
 // * From 요소
 // ** 버튼
 export { default as Button } from './button/Button';
-export { Button_v2 } from './button/Button_v2';
+// export { ButtonV2 } from './button/Button_v2';
 // ** 인풋
-export { default as Input } from './Input/Input';
+export { default as Input } from './input/Input'; // TODO 삭제 및 Input_v2 로 대체예정
+export { InputV2 } from './input/Input_v2';
+export { Label } from './input/Label';
 
 // * 일반
 // ** cta 박스
@@ -51,7 +53,3 @@ export { UserIcon } from './icons/UserIcon';
 export { BottomNav } from './layout/BottomNav'; // 하단 앱바
 export { Header } from './layout/Header'; // 하단 앱바
 export { NoContent } from './layout/NoContent'; // 컨텐츠 없음 레이아웃
-
-// 로딩
-export { ContentLoading } from './loading/ContentLoading'; // 화면 일부만 덮는 로딩레이어
-export { FullLoading } from './loading/FullLoading'; // 화면 일부만 덮는 로딩레이어
