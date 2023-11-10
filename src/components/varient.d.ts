@@ -1,5 +1,5 @@
 // 테마
-export type ThemeType = 'primary' | 'secondary' | 'tertiary';
+export type ThemeType = 'primary' | 'secondary' | 'tertiary' | 'accent';
 
 // 가로 채움 크기
 export type FullType = 'full' | 'half';

@@ -13,7 +13,8 @@ export { ReaderOnlyText } from './typo/ReaderOnlyText';
 // * From 요소
 // ** 버튼
 export { default as Button } from './button/Button';
-// export { ButtonV2 } from './button/Button_v2';
+export { ButtonV2 } from './button/Button_v2';
+export { IconButton } from './button/IconButton';
 // ** 인풋
 export { default as Input } from './input/Input'; // TODO 삭제 및 Input_v2 로 대체예정
 export { InputV2 } from './input/Input_v2';
