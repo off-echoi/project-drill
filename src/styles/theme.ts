@@ -2,14 +2,19 @@ import { DefaultTheme } from 'styled-components';
 
 const HEIGHT = {
   bottomNav: '52px',
-  header: '52px',
+  header: '38px',
+} as const;
+
+const BREAK_POINT = {
+  md: '768px',
+  sm: '576px',
 } as const;
 
 const COLOR = {
   primary1: '#2778e9',
   primary2: '#161b75',
-  secondary1: '#a5bcff',
-  secondary2: '#6f88d1',
+  secondary1: '#51abf3',
+  secondary2: '#33b893',
   gray1: '#000000',
   gray2: '#303030',
   gray3: '#505050',
@@ -87,6 +92,7 @@ const Z_INDEX = {
   maximum: 1000,
 } as const;
 
+export type BPTypes = typeof BREAK_POINT;
 export type HeightTypes = typeof HEIGHT;
 export type ColorTypes = typeof COLOR;
 export type TypographyTypes = typeof TYPOGRAPHY;
@@ -96,6 +102,7 @@ export type RoundedTypes = typeof ROUNDED;
 export type ZIndexTypes = typeof Z_INDEX;
 
 export const theme: DefaultTheme = {
+  bp: BREAK_POINT,
   height: HEIGHT,
   color: COLOR,
   typography: TYPOGRAPHY,
