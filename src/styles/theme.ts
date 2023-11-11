@@ -23,7 +23,7 @@ const COLOR = {
   gray6: '#a0a0a0',
   gray7: '#c0c0c0',
   gray8: '#e0e0e0',
-  gray9: '#f0f0f0',
+  gray9: '#f5f5f5',
   white: '#ffffff',
   accent: '#ee264a',
 } as const;
