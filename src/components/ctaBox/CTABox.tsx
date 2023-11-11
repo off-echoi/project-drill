@@ -21,12 +21,12 @@ export const CTABox = ({ title, content }: CTABoxProps) => {
   return (
     <StyledDiv>
       {title && (
-        <Typography typoType="sub2" align="center" color={theme.color.sub2} className="title">
+        <Typography typotype="sub2" align="center" color={theme.color.sub2} className="title">
           {title}
         </Typography>
       )}
       {content && (
-        <Typography typoType="body2" align="center" color={theme.color.gray5}>
+        <Typography typotype="body2" align="center" color={theme.color.gray5}>
           {content}
         </Typography>
       )}

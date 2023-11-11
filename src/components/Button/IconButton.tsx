@@ -29,12 +29,12 @@ const StyledIconButton = styled.button<IconButtonProps>`
   cursor: pointer;
 `;
 
-export const IconButton = ({ as = 'Button', size = 'medium', label, icon, className, ...props }: IconButtonProps) => {
+export const IconButton = ({ as = 'button', size = 'medium', label, icon, className, ...props }: IconButtonProps) => {
   const IconChild = cloneElement(icon as ReactElement, { size: '100%' });
   const Component = as as ElementType;
 
   return (
-    <StyledIconButton as={Component} ariaLabel={label} size={size} className={className} {...props}>
+    <StyledIconButton as={Component} aria-label={label} size={size} className={className} {...props}>
       {IconChild}
     </StyledIconButton>
   );

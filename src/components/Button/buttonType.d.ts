@@ -4,7 +4,7 @@ import { LinkProps } from 'react-router-dom';
 type MergeButtonType<BaseType, ElementType> = BaseType & ElementType;
 
 // 버튼 props
-type AsButtonProps<T> = MergeButtonType<T, Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof T> & { as?: 'Button' }>;
+type AsButtonProps<T> = MergeButtonType<T, Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof T> & { as?: 'button' }>;
 
 // Link Props
 type AsLinkProps<T> = MergeButtonType<T, Omit<LinkProps, keyof T> & { as?: 'Link' }>;

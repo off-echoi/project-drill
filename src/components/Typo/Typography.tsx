@@ -5,7 +5,7 @@ import { getStyleBasedOnCondition } from 'styles/styledUtils';
 import { ColorTypes, theme } from 'styles/theme';
 
 interface TypographyProps {
-  typoType: 'heading1' | 'heading2' | 'heading3' | 'sub1' | 'sub2' | 'sub3' | 'body1' | 'body2' | 'body3' | 'caption1' | 'caption2' | 'caption3';
+  typotype: 'heading1' | 'heading2' | 'heading3' | 'sub1' | 'sub2' | 'sub3' | 'body1' | 'body2' | 'body3' | 'caption1' | 'caption2' | 'caption3';
   as?: ElementType;
   color?: ColorTypes;
   align?: AlignType;
@@ -24,7 +24,7 @@ const StyledTypography = styled.div<TypographyProps>`
       `color: ${color};`,
       `color: ${theme.color.gray3};`
     )}
-  ${({ typoType }) => {
+  ${({ typotype }) => {
     const typoTheme = {
       heading1: `font-size: ${theme.typography.size.xxl};
                  font-weight: ${theme.typography.weight.extrabold};`,
@@ -51,14 +51,14 @@ const StyledTypography = styled.div<TypographyProps>`
       caption3: `font-size: ${theme.typography.size.xs};
                  font-weight: ${theme.typography.weight.bold};`,
     };
-    return typoTheme[typoType];
+    return typoTheme[typotype];
   }}
 `;
 
-export const Typography = ({ typoType = 'body2', align = 'left', as, color, children, className = '' }: TypographyProps) => {
+export const Typography = ({ typotype = 'body2', align = 'left', as, color, children, className = '' }: TypographyProps) => {
   // typoType에 따라 component의 ElementType변경
   const getAsElement = () => {
-    switch (typoType) {
+    switch (typotype) {
       case 'heading1':
         return 'h1';
       case 'heading2':
@@ -87,7 +87,7 @@ export const Typography = ({ typoType = 'body2', align = 'left', as, color, chil
   const Component = as || getAsElement();
 
   return (
-    <StyledTypography as={Component} color={color} typoType={typoType} align={align} className={className}>
+    <StyledTypography as={Component} color={color} typotype={typotype} align={align} className={className}>
       {children}
     </StyledTypography>
   );

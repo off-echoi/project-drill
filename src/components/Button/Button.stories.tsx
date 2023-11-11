@@ -28,6 +28,6 @@ export const Default: Story = {
     children: '버튼',
     disabled: false,
     rounded: 'xl',
-    isTextButton: false,
+    $isTextButton: false,
   },
 };

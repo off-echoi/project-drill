@@ -43,7 +43,7 @@ export const BoardList = ({ content }: BoardListProps) => {
                 {answerYN && <span className="badge_answer">V</span>}
                 <div className="board_left">
                   <Link to={`${path}?id=${id}`} className="board_title">
-                    <Typography as="span" typoType="body2">
+                    <Typography as="span" typotype="body2">
                       {subject}
                     </Typography>
                   </Link>

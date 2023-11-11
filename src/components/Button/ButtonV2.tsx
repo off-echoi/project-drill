@@ -1,4 +1,4 @@
-import { ElementType, ReactNode } from 'react';
+import { ElementType, ReactNode, forwardRef } from 'react';
 import { UnionButtonProps } from './buttonType';
 import { FullType, SizeType, ThemeType } from 'components/varient';
 import { styled } from 'styled-components';
@@ -7,9 +7,9 @@ import { theme } from 'styles/theme';
 type BaseProps = {
   size?: SizeType;
   width?: FullType | string | number;
-  colorTheme?: ThemeType;
+  colortheme?: ThemeType;
   className?: string;
-  isTextButton?: boolean;
+  $isTextButton?: boolean;
   rounded?: keyof typeof theme.rounded;
   children?: ReactNode;
 };
@@ -18,7 +18,7 @@ type ButtonProps = UnionButtonProps<BaseProps>;
 
 const StyledButton = styled.button<ButtonProps>`
   display: block;
-  ${({ size, width, colorTheme, isTextButton }) => {
+  ${({ size, width, colortheme, $isTextButton }) => {
     let concatStyle = '';
     const sizeStyle: Record<SizeType, string> = {
       large: `padding: ${theme.spacing.xl}; font-size: ${theme.typography.size.lg}; `,
@@ -55,14 +55,14 @@ const StyledButton = styled.button<ButtonProps>`
               color: ${theme.color.white}; `,
     };
 
-    if (isTextButton) {
+    if ($isTextButton) {
       colorStyle.primary = `color: ${theme.color.primary1}; `;
       colorStyle.secondary = `color: ${theme.color.secondary}; `;
       colorStyle.tertiary = `color: ${theme.color.gray7}; `;
       colorStyle.accent = `color: ${theme.color.accent}; `;
     }
 
-    concatStyle += colorStyle[colorTheme as ThemeType];
+    concatStyle += colorStyle[colortheme as ThemeType];
 
     return concatStyle + ' ';
   }}
@@ -78,29 +78,40 @@ const StyledButton = styled.button<ButtonProps>`
   }
 `;
 
-export function ButtonV2({
-  as = 'Button',
-  size = 'medium',
-  width = 'full',
-  colorTheme = 'primary',
-  rounded = 'none',
-  isTextButton = false,
-  className,
-  children,
-  ...props
-}: ButtonProps) {
-  const Component = as as ElementType;
-  return (
-    <StyledButton
-      as={Component}
-      size={size}
-      width={width}
-      colorTheme={colorTheme}
-      rounded={rounded}
-      isTextButton={isTextButton}
-      className={className}
-      {...props}>
-      {children}
-    </StyledButton>
-  );
-}
+type RefType = HTMLButtonElement | HTMLLinkElement | HTMLAnchorElement;
+
+export const ButtonV2 = forwardRef<RefType, ButtonProps>(
+  (
+    {
+      as = 'button',
+      size = 'medium',
+      width = 'full',
+      colortheme = 'primary',
+      rounded = 'none',
+      $isTextButton = false,
+      className,
+      children,
+      ...props
+    }: ButtonProps,
+    ref
+  ) => {
+    const Component = as as ElementType;
+
+    return (
+      <StyledButton
+        as={Component}
+        size={size}
+        width={width}
+        colortheme={colortheme}
+        rounded={rounded}
+        $isTextButton={$isTextButton}
+        className={className}
+        {...props}
+        ref={ref}>
+        {children}
+      </StyledButton>
+    );
+  }
+);
+
+ButtonV2.displayName = 'ButtonV2';
