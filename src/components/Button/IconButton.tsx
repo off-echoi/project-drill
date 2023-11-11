@@ -2,7 +2,6 @@ import { ElementType, ReactElement, cloneElement } from 'react';
 import { SizeType } from 'components/varient';
 import { styled } from 'styled-components';
 import { theme } from 'styles/theme';
-import { ReaderOnlyText } from 'components';
 import { UnionButtonProps } from './buttonType';
 
 interface BaseProps {
@@ -35,8 +34,7 @@ export const IconButton = ({ as = 'Button', size = 'medium', label, icon, classN
   const Component = as as ElementType;
 
   return (
-    <StyledIconButton as={Component} size={size} className={className} {...props}>
-      <ReaderOnlyText>{label}</ReaderOnlyText>
+    <StyledIconButton as={Component} ariaLabel={label} size={size} className={className} {...props}>
       {IconChild}
     </StyledIconButton>
   );

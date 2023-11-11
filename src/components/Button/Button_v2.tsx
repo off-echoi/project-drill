@@ -7,8 +7,9 @@ import { theme } from 'styles/theme';
 type BaseProps = {
   size?: SizeType;
   width?: FullType | string | number;
-  color?: ThemeType;
+  colorTheme?: ThemeType;
   className?: string;
+  isTextButton?: boolean;
   rounded?: keyof typeof theme.rounded;
   children?: ReactNode;
 };
@@ -17,7 +18,7 @@ type ButtonProps = UnionButtonProps<BaseProps>;
 
 const StyledButton = styled.button<ButtonProps>`
   display: block;
-  ${({ size, width, color, rounded }) => {
+  ${({ size, width, colorTheme, isTextButton }) => {
     let concatStyle = '';
     const sizeStyle: Record<SizeType, string> = {
       large: `padding: ${theme.spacing.xl}; font-size: ${theme.typography.size.lg}; `,
@@ -54,7 +55,14 @@ const StyledButton = styled.button<ButtonProps>`
               color: ${theme.color.white}; `,
     };
 
-    concatStyle += colorStyle[color as ThemeType];
+    if (isTextButton) {
+      colorStyle.primary = `color: ${theme.color.primary1}; `;
+      colorStyle.secondary = `color: ${theme.color.secondary}; `;
+      colorStyle.tertiary = `color: ${theme.color.gray7}; `;
+      colorStyle.accent = `color: ${theme.color.accent}; `;
+    }
+
+    concatStyle += colorStyle[colorTheme as ThemeType];
 
     return concatStyle + ' ';
   }}
@@ -74,15 +82,24 @@ export function ButtonV2({
   as = 'Button',
   size = 'medium',
   width = 'full',
-  color = 'primary',
+  colorTheme = 'primary',
   rounded = 'none',
+  isTextButton = false,
   className,
   children,
   ...props
 }: ButtonProps) {
   const Component = as as ElementType;
   return (
-    <StyledButton as={Component} size={size} width={width} color={color} rounded={rounded} className={className} {...props}>
+    <StyledButton
+      as={Component}
+      size={size}
+      width={width}
+      colorTheme={colorTheme}
+      rounded={rounded}
+      isTextButton={isTextButton}
+      className={className}
+      {...props}>
       {children}
     </StyledButton>
   );
