@@ -33,7 +33,7 @@ const StyledImageWrap = styled.div<Pick<AvatarProps, 'src'>>`
       `background-color: ${theme.color.white};`,
       `background-color:  ${theme.color.gray9};
        line-height : 50px;
-       color: ${theme.color.primary2};
+       color: ${theme.color.secondary1};
        font-size: ${theme.typography.size.xxl};
        font-weight: ${theme.typography.weight.black};
       `

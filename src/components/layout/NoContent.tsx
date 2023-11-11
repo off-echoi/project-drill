@@ -18,7 +18,7 @@ const StyledDiv = styled.div`
 export const NoContent = ({ content }: NoContentProps) => {
   return (
     <StyledDiv>
-      <NoContentIcon size={60} color={theme.color.secondary2} />
+      <NoContentIcon size={60} color={theme.color.gray7} />
       <Typography typoType="body2" color={theme.color.gray4}>
         {content || '찾으시는 정보가 없습니다.'}
       </Typography>
