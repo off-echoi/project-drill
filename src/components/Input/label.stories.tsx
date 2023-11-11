@@ -15,12 +15,3 @@ type Story = StoryObj<typeof meta>;
 export const Defult: Story = {
   args: { children: '라벨' },
 };
-
-export const WithInput: Story = {
-  render: () => (
-    <>
-      <Label htmlFor="somInputId">라벨</Label>
-      <InputV2 id="somInputId" />
-    </>
-  ),
-};

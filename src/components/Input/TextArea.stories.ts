@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InputV2 } from 'components';
+import { TextArea } from 'components';
 
 const meta = {
-  title: 'forms/Input',
-  component: InputV2,
+  title: 'forms/textarea',
+  component: TextArea,
   tags: ['autodocs'],
   argTypes: {
     width: {
       control: { type: 'text' },
     },
   },
-} satisfies Meta<typeof InputV2>;
+} satisfies Meta<typeof TextArea>;
 
 export default meta;
 
@@ -18,7 +18,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Defult: Story = {
   args: {
-    type: 'text',
     width: '100%',
   },
 };
