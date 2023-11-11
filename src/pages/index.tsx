@@ -1,40 +1,40 @@
 // 공통
-import Common from './00_Common/Common'
+import Common from './00_Common/Common';
 // 메인화면
-import Main from './00_Main/Main'
+import Main from './00_Main/Main';
 // 회원 선택 화면
-import Members from './00_Members/Members'
+import Members from './00_Members/Members';
 // 회원 삭제
-import MemberDelete from './00_Members/MemberDelete'
+import MemberDelete from './00_Members/MemberDelete';
 // 회원 정보
-import Info from './01_Info/Info'
+import Info from './01_Info/Info';
 // 과제 리스트 / 상세 / 쓰기
-import TaskList from './02_Task/TaskList'
-import TaskDetail from './02_Task/TaskDetail'
-import TaskWrite from './02_Task/TaskWrite'
+import TaskList from './Task/TaskList';
+import TaskDetail from './Task/TaskDetail';
+import TaskWrite from './Task/TaskWrite';
 // 질문
-import QuestionList from './03_Question/QuestionList'
-import QuestionDetail from './03_Question/QuestionDetail'
+import QuestionList from './03_Question/QuestionList';
+import QuestionDetail from './03_Question/QuestionDetail';
 // 공지사항 리스트 / 상세 / 쓰기
-import NoticeList from './04_Notice/NoticeList'
-import NoticeWrite from './04_Notice/NoticeWrite'
-import NoticeDetail from './04_Notice/NoticeDetail'
+import NoticeList from './04_Notice/NoticeList';
+import NoticeWrite from './04_Notice/NoticeWrite';
+import NoticeDetail from './04_Notice/NoticeDetail';
 // 분석
-import Analysis from './05_Analysis/Analysis'
-import AnalysisWrite from './05_Analysis/AnalysisWrite'
+import Analysis from './05_Analysis/Analysis';
+import AnalysisWrite from './05_Analysis/AnalysisWrite';
 // 서비스 탈퇴
-import Withdraw from './08_Withdraw/Withdraw'
+import Withdraw from './08_Withdraw/Withdraw';
 // 카운터 테스트
-import Counter from './CounterTest/Counter'
+import Counter from './CounterTest/Counter';
 
 interface IRoutes {
-  title: string
-  path: string
-  exact?: boolean
-  Component: React.FC
+  title: string;
+  path: string;
+  exact?: boolean;
+  Component: React.FC;
 }
 
-const Routes: IRoutes[] = [
+const RoutesPath: IRoutes[] = [
   {
     title: '공통',
     path: '/common',
@@ -73,7 +73,7 @@ const Routes: IRoutes[] = [
   },
   {
     title: '과제 상세 - 읽기',
-    path: '/task/detail',
+    path: '/task/:taskId',
     Component: TaskDetail,
     exact: true,
   },
@@ -137,6 +137,6 @@ const Routes: IRoutes[] = [
     Component: Counter,
     exact: true,
   },
-]
+];
 
-export default Routes
+export default RoutesPath;

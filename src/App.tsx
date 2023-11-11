@@ -3,13 +3,11 @@ import RouteIndex from 'router';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { popupControll } from 'reducers/popup';
-import Bar from 'layouts/Bar';
-import Nav from 'layouts/Nav';
 import ModalPortal from 'layouts/ModalPortal';
 import Login from 'popups/Login';
 import { RootState } from 'reducers/index';
 import { authService } from 'fbase';
-import { BottomNav } from 'components';
+import { BottomNav, SideNav } from 'components';
 
 function App() {
   const [isLogged, setIsLogged] = useState<boolean>(authService.currentUser !== null ? true : false);
@@ -28,7 +26,7 @@ function App() {
     <>
       <RouteIndex isLogged={isLogged} />
       <>{pathname === '/members' || pathname === '/' ? <></> : <BottomNav />}</>
-      <Nav />
+      <SideNav />
       {/* 팝업영역 */}
       <ModalPortal>{POPUP_LOGIN_STATE ? <Login /> : null}</ModalPortal>
     </>
