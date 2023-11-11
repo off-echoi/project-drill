@@ -10,5 +10,5 @@ export const ArrowIcon = ({ size = '30', color = '#555', direction = 'top' }: Di
     down: RiArrowDownSLine,
   };
 
-  return IconComponent[direction]({ size, color });
+  return IconComponent[direction as DirectionType]({ size, color });
 };
