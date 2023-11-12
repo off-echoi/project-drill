@@ -22,6 +22,8 @@ export { Radio } from './input/Radio';
 export { CheckBox } from './input/CheckBox';
 
 // * 일반
+// ** 로고
+export { Logo } from './logo/Logo';
 // ** 사용자 프로필 아바타
 export { Avatar } from './avatar/Avatar';
 // ** cta 박스
