@@ -87,7 +87,7 @@ export const ButtonV2 = forwardRef<RefType, ButtonProps>(
       size = 'medium',
       width = 'full',
       colortheme = 'primary',
-      rounded = 'none',
+      rounded = 'md',
       $isTextButton = false,
       className,
       children,
