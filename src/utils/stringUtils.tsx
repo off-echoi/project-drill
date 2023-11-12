@@ -22,7 +22,7 @@ export const replaceNewLineToBr = (text: string): ReactNode => {
     return <Fragment>{text}</Fragment>;
   }
 
-  return text.split('\\n').map((word, idx) => (
+  return text.split('\n').map((word, idx) => (
     <Fragment key={idx}>
       {word}
       <br />
