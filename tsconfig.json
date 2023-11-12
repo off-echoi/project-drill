@@ -26,7 +26,8 @@
       "popups/*": ["popups/*"],
       "reducers/*": ["reducers/*"],
       "router/*": ["router/*"],
-      "hook/*": ["hook/*"]
+      "hook/*": ["hook/*"],
+      "styles/*": ["styles/*"]
     }
   },
   "include": ["src", "*.ts", "*.tsx", "*.js", "*.jsx", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"]

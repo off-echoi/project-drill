@@ -1,5 +1,5 @@
-import { ReactNode } from 'react'
-import styled from 'styled-components'
+import { ReactNode } from 'react';
+import styled from 'styled-components';
 
 const StyledReaderOnlyText = styled.span`
   overflow: hidden;
@@ -12,7 +12,8 @@ const StyledReaderOnlyText = styled.span`
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
-`
-export default function ReaderOnlyText({ children }: { children: ReactNode }) {
-  return <StyledReaderOnlyText>{children}</StyledReaderOnlyText>
-}
+`;
+
+export const ReaderOnlyText = ({ children }: { children: ReactNode }) => {
+  return <StyledReaderOnlyText>{children}</StyledReaderOnlyText>;
+};
