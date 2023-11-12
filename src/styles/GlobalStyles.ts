@@ -49,8 +49,9 @@ const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
         border: 0;
-        font-size: 16px;
         vertical-align: baseline;
+        font-size: 16px;
+        line-height: 1.4;
         color: #333;
     }
     body{
