@@ -3,16 +3,22 @@ import { NavLink } from 'react-router-dom';
 import { styled } from 'styled-components';
 import { theme } from 'styles/theme';
 
-const StyledNav = styled.nav`
+const StyledNav = styled.div`
   position: fixed;
   bottom: 0;
   left: 0;
-  display: flex;
-  justify-content: space-between;
   width: 100vw;
   height: ${theme.height.bottomNav};
   background: white;
   border-top: 0.5px solid ${theme.color.gray8};
+  > nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: ${theme.bp.md};
+    height: 100%;
+    margin: 0 auto;
+  }
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -41,29 +47,32 @@ const StyledNavLink = styled(NavLink)`
     }
   }
 `;
+
 export const BottomNav = () => {
   return (
     <StyledNav>
-      <StyledNavLink to="/task" className={isActive => (isActive ? 'active' : '')}>
-        <TaskIcon />
-        <span>과제</span>
-      </StyledNavLink>
-      <StyledNavLink to="/qna" className={isActive => (isActive ? 'active' : '')}>
-        <QnAIcon />
-        <span>질문</span>
-      </StyledNavLink>
-      <StyledNavLink to="/notice" className={isActive => (isActive ? 'active' : '')}>
-        <InfoIcon />
-        <span>공지</span>
-      </StyledNavLink>
-      <StyledNavLink to="/analysis" className={isActive => (isActive ? 'active' : '')}>
-        <ChartIcon />
-        <span>분석</span>
-      </StyledNavLink>
-      <StyledNavLink to="/info" className={isActive => (isActive ? 'active' : '')}>
-        <UserIcon />
-        <span>마이</span>
-      </StyledNavLink>
+      <nav>
+        <StyledNavLink to="/task" className={isActive => (isActive ? 'active' : '')}>
+          <TaskIcon />
+          <span>과제</span>
+        </StyledNavLink>
+        <StyledNavLink to="/qna" className={isActive => (isActive ? 'active' : '')}>
+          <QnAIcon />
+          <span>질문</span>
+        </StyledNavLink>
+        <StyledNavLink to="/notice" className={isActive => (isActive ? 'active' : '')}>
+          <InfoIcon />
+          <span>공지</span>
+        </StyledNavLink>
+        <StyledNavLink to="/analysis" className={isActive => (isActive ? 'active' : '')}>
+          <ChartIcon />
+          <span>분석</span>
+        </StyledNavLink>
+        <StyledNavLink to="/info" className={isActive => (isActive ? 'active' : '')}>
+          <UserIcon />
+          <span>마이</span>
+        </StyledNavLink>
+      </nav>
     </StyledNav>
   );
 };

@@ -2,7 +2,7 @@ import { DefaultTheme } from 'styled-components';
 
 const HEIGHT = {
   bottomNav: '52px',
-  header: '38px',
+  header: '42px',
 } as const;
 
 const BREAK_POINT = {
