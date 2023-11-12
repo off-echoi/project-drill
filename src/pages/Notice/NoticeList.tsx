@@ -1,4 +1,4 @@
-import { Header, BoardList, IconButton, PencilIcon, Main, CTABox, Accordion, AccordionItem, AccordionContent, Badge, NoContent } from 'components';
+import { Header, IconButton, PencilIcon, Main, CTABox, Accordion, AccordionItem, AccordionContent, Badge, NoContent } from 'components';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { goPage } from 'modules';
