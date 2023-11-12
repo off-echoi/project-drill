@@ -1,7 +1,7 @@
 import dayjs, { Dayjs } from 'dayjs';
 
 // 함수의 인자로 넣는 날짜 형식
-type DatePatternType = Date | string;
+type DatePatternType = Date | string | Dayjs;
 
 // 포멧팅 가능한 형식
 type DateFormatType = 'YYYY-MM-DD' | 'M.D' | 'M.D(ddd)';
@@ -22,7 +22,6 @@ export const getToday = (): Dayjs => {
 export const formattingDate = (fullDate: DatePatternType = new Date(), format: DateFormatType = 'YYYY-MM-DD'): string => {
   return dayjs(fullDate).format(format);
 };
-
 /**
  * 날짜 차이 계산하는 함수
  */
