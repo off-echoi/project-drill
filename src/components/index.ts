@@ -1,10 +1,4 @@
 // 게시판류 목록
-export { BoardList } from './boardList/BoardList';
-// 게시판류 읽기
-export { default as BoardTable } from './BoardTable/BoardTable'; // TODO 삭제 및 BoardTableV2 로 대체예정
-// 사용자 정보
-export { default as InfoTable } from './InfoTable/InfoTable'; // TODO 삭제 및 로 대체예정
-//
 export { BoardTableV2 } from './table/BoardTableV2'; // 게세판 컨탠츠용 테이블
 export { ListTable } from './table/ListTable'; // 게시판 리스트용 테이블
 
