@@ -52,14 +52,15 @@ export const Header = ({ leftNavType = 'back', rightNavButtons = [], headerTitle
     <>
       <StyledHeader>
         <div>
-          {leftNavType === 'menu' && (
+          {/* TODO */}
+          {/* {leftNavType === 'menu' && (
             <IconButton
               icon={<MenuIcon />} //
               label="사이드메뉴열기"
               onClick={() => onOpenSideNav()}
             />
-          )}
-          {leftNavType === 'back' && (
+          )} */}
+          {(leftNavType === 'back' || leftNavType === 'menu') && (
             <IconButton
               icon={<ArrowIcon direction="left" />} //
               label="뒤로가기"
