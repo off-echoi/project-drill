@@ -7,7 +7,7 @@ const tableData = [
     title: '작성자',
     content: '최선생',
   },
-  { title: '날짜', content: '2011-10-18' },
+  { title: '날짜', content: '2023-10-18' },
   {
     title: '내용',
     content:

@@ -61,7 +61,7 @@ function TaskWrite() {
                     type="text" //
                     name="subject"
                     id="subject"
-                    placeholder="과제를 제목을 입력하세요."
+                    placeholder="과제 제목을 입력하세요."
                     value={task.subject}
                     onChange={onChangeTask}
                   />
@@ -82,7 +82,7 @@ function TaskWrite() {
                     height={'250px'} //
                     name="content"
                     id="content"
-                    placeholder="과제를 내용을 입력하세요."
+                    placeholder="과제 내용을 입력하세요."
                     value={task.content}
                     onChange={onChangeTask}
                   />
@@ -90,7 +90,7 @@ function TaskWrite() {
               },
             ]}
           />
-          <ButtonV2 onClick={onSubmitTask} ref={submitButtonRef} rounded="md">
+          <ButtonV2 onClick={onSubmitTask} ref={submitButtonRef}>
             등록하기
           </ButtonV2>
         </StyledDiv>
@@ -99,7 +99,6 @@ function TaskWrite() {
   );
 }
 const StyledDiv = styled.div`
-  display: flex;
   display: flex;
   flex-direction: column;
   height: 100%;

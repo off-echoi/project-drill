@@ -1,5 +1,4 @@
-import { Header, BoardList, CTABox, IconButton, PencilIcon, Main, ListTable } from 'components';
-import { useCallback } from 'react';
+import { Header, CTABox, IconButton, PencilIcon, Main, ListTable } from 'components';
 import { useNavigate } from 'react-router-dom';
 import { goPage } from 'modules';
 
@@ -24,6 +23,7 @@ const taskData = [
     idx: 3,
   },
 ];
+
 function TaskListPage() {
   const navigate = useNavigate();
 
