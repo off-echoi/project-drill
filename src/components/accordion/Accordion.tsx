@@ -29,6 +29,7 @@ const StyledAccordionItem = styled.div`
     display: flex;
     justify-content: space-between;
     padding: ${theme.spacing.md};
+    font-size: ${theme.typography.size.md};
     cursor: pointer;
     button {
       flex-shrink: 0;
@@ -50,7 +51,7 @@ export const AccordionItem = ({ title, accordionId = '1', children }: AccordionI
   return (
     <StyledAccordionItem className={isExpanded ? 'open' : ''} onClick={() => onToggleAccordion(accordionId, isExpanded)}>
       <div className="accordion_title">
-        <Typography typotype="sub2">{title}</Typography>
+        {title}
         <IconButton icon={<ArrowIcon direction={isExpanded ? 'top' : 'down'} />} label={{ title } + '내용 보기'} />
       </div>
 
@@ -67,6 +68,7 @@ const StyledAccordionContent = styled.div`
   padding-right: ${theme.spacing.lg};
   div {
     overflow: hidden;
+    font-size: ${theme.typography.size.sm};
   }
 `;
 
