@@ -1,14 +1,7 @@
-import { WiTornado } from 'react-icons/wi'
-import { TiWeatherWindy } from 'react-icons/ti'
-import { PiEggCrackBold } from 'react-icons/pi'
+import { IconBaseProps } from 'react-icons';
+import { TiWeatherWindy } from 'react-icons/ti';
+import { theme } from 'styles/theme';
 // FaHillRockslide
-import { FiPocket } from 'react-icons/fi'
-import { TbWaveSine } from 'react-icons/tb'
-export const DrillIcon = () => {
-  return (
-    <div style={{ transform: 'rotate(0deg)' }}>
-      <FiPocket color="#3064ce" />
-      <TiWeatherWindy color="#3064ce" />
-    </div>
-  )
-}
+export const DrillIcon = ({ size = '30' }: IconBaseProps) => {
+  return <TiWeatherWindy color={theme.color.primary1} size={size} />;
+};
