@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { BoradTableV2, Typography } from 'components';
+import { BoardTableV2, Typography } from 'components';
 
 const meta = {
   title: 'table/BoardTable',
-  component: BoradTableV2,
+  component: BoardTableV2,
   tags: ['autodocs'],
-} satisfies Meta<typeof BoradTableV2>;
+} satisfies Meta<typeof BoardTableV2>;
 
 export default meta;
 
@@ -23,6 +23,6 @@ export const Defult: Story = {
       { title: '기타', content: <Typography typotype="heading1">Typography</Typography> },
     ],
     columnSize: ['30%', 'auto'],
-    tableTheme: 'primary',
+    tabletheme: 'primary',
   },
 };

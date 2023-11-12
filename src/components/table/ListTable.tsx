@@ -1,8 +1,15 @@
+import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { theme } from 'styles/theme';
 
-type TableDataType = { title: string; date: string; idx: number; linkTo?: string };
+type TableDataType = {
+  decorator?: ReactNode;
+  title: string | ReactNode; //
+  date: string;
+  idx: string | number;
+  linkTo?: string;
+};
 type ColumnTitleType = { column: string; size: string };
 interface ListTableProps {
   tableData: TableDataType[];
@@ -24,6 +31,7 @@ const StyledListTable = styled.table`
   td,
   th {
     padding: ${theme.spacing.lg};
+    vertical-align: middle;
   }
   th {
     text-align: center;
@@ -49,23 +57,27 @@ const StyledListTable = styled.table`
     font-size: inherit;
   }
 `;
-export const ListTable = ({ tableData, columnTitle, className }: ListTableProps) => {
+
+export const ListTable = ({ tableData, columnTitle }: ListTableProps) => {
   return (
     <StyledListTable>
       <colgroup>
-        {columnTitle.map(({ size }) => (
-          <col width={size} />
+        {columnTitle.map(({ size }, idx) => (
+          <col width={size} key={idx} />
         ))}
       </colgroup>
       <thead>
-        {columnTitle.map(({ column }, idx) => (
-          <th key={idx}>{column}</th>
-        ))}
+        <tr>
+          {columnTitle.map(({ column }, idx) => (
+            <th key={idx}>{column}</th>
+          ))}
+        </tr>
       </thead>
       <tbody>
-        {tableData.map(({ title, date, idx, linkTo }) => (
+        {tableData.map(({ title, date, idx, linkTo, decorator }) => (
           <tr key={idx}>
             <td>
+              {decorator && decorator}
               <p className="list_title">{linkTo ? <Link to={linkTo}>{title}</Link> : <span>{title}</span>}</p>
             </td>
             <td>{date}</td>
