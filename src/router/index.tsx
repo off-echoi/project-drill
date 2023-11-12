@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import RoutesPath from 'pages';
-import Main from 'pages/00_Main/Main';
+import Main from 'pages/Main/Main';
 
 interface IRouteIndex {
   isLogged: boolean;

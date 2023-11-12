@@ -1,5 +1,5 @@
 // 메인화면
-import Main from './00_Main/Main';
+import Main from './Main/Main';
 // 회원 선택 화면
 import Members from './00_Members/Members';
 // 회원 삭제
@@ -22,13 +22,13 @@ import AnalysisWrite from './05_Analysis/AnalysisWrite';
 // 서비스 탈퇴
 import Withdraw from './08_Withdraw/Withdraw';
 
-interface IRoutes {
+type RoutesType = {
   title: string;
   path: string;
   Component: React.FC;
-}
+};
 
-const RoutesPath: IRoutes[] = [
+const RoutesPath: RoutesType[] = [
   {
     title: '메인',
     path: '/',
