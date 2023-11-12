@@ -34,6 +34,8 @@ export { Typography } from './typo/Typography';
 export { ReaderOnlyText } from './typo/ReaderOnlyText';
 // ** 아코디언
 export { Accordion, AccordionItem, AccordionContent } from './accordion/Accordion';
+// ** 구분선
+export { Divider } from './divider/Divider';
 
 // * 아이콘
 export { AddCircleIcon } from './icons/AddCircleIcon';

@@ -16,6 +16,7 @@ const StyledHeader = styled.header`
   position: sticky;
   left: 0;
   top: 0;
+  z-index: ${theme.zIndex.lowest};
   flex-shrink: 0;
   width: 100%;
   height: ${theme.height.header};
@@ -37,10 +38,10 @@ const StyledButtonWraper = styled.div`
   gap: ${theme.spacing.xs};
 `;
 
-export const Header = ({ leftNavType = 'menu', rightNavButtons = [], headerTitle }: HeaderProps) => {
+export const Header = ({ leftNavType = 'back', rightNavButtons = [], headerTitle }: HeaderProps) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // // 사이드 네비 함수
+
   const onOpenSideNav = () => {
     dispatch(popupControll({ type: 'NAV_STATE', payload: true }));
   };
