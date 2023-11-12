@@ -41,7 +41,6 @@ const GlobalStyles = createGlobalStyle`
 
     * {
         font-family: 'Pretendard-Regular', sans-serif;
-        color: #333;
         box-sizing: border-box;
     }
 
@@ -50,8 +49,9 @@ const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
         border: 0;
-        font-size: 10px;
+        font-size: 16px;
         vertical-align: baseline;
+        color: #333;
     }
     body{
         line-height: 1;
