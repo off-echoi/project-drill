@@ -39,6 +39,8 @@ export { Accordion, AccordionItem, AccordionContent } from './accordion/Accordio
 // ** 구분선
 export { Divider } from './divider/Divider';
 
+// * 차트
+export { LineChart } from './chart/LineChart';
 // * 아이콘
 export { AddCircleIcon } from './icons/AddCircleIcon';
 export { AddIcon } from './icons/AddIcon';
