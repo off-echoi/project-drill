@@ -1,5 +1,38 @@
 # Drill
 
+## Getting Started(branch : version2023)
+
+```bash
+npm install
+npm run start
+```
+
+[http://localhost:3000](http://localhost:3000) 접속
+
+## StoryBook
+
+```bash
+npm install
+npm run storybook
+```
+
+[http://localhost:6006](http://localhost:6006) 접속
+
+---
+
+### 작업 진행 상황
+
+2023.10 ~ 진행중으로 현재 목업데이터로 바인딩 된 단계입니다.
+
+- 2021년 작업했던 프로젝트 마이그레이션 & 리팩토링 진행중
+  - 코어 라이브러리 버전업(react, redux, react-router-dom, typescript...)
+  - 사용하지 않는 라이브러리 삭제
+  - 더이상 업데이트 되지 않는 라이브러리 대체
+- storyBook 추가
+  - 컴포넌트의 재사용성과 확장성 구상
+  - 디자인 통일성 구축
+  - UI 단위 테스트
+
 ## 개요
 
 과외, PT 등 1:1 수업환경에서  
@@ -24,12 +57,6 @@
 ### 공지
 
 수업 스케줄 변경 등을 중요 공지사항을 등록
-
-## 작업 진행 상황
-
-2023 10 ~ 진행 중
-
-- 2023.11.13
 
 ## 개발 스펙
 
