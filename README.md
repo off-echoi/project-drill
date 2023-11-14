@@ -79,7 +79,8 @@ npm run storybook
 - react(create-react-app) + typescript
 - styled-components
 - storybook
-
+- redux
+  
 [backend]
 
 - firebase(예정)
